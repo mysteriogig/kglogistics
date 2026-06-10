@@ -62,7 +62,7 @@ function ServiceDetail() {
           <p className="mt-4 text-muted-foreground leading-relaxed text-lg">{s.intro}</p>
           <h3 className="mt-12 text-xl font-bold text-[var(--dark)]">Key Features</h3>
           <ul className="mt-5 grid sm:grid-cols-2 gap-3">
-            {s.features.map((f) => (
+            {s.features.map((f: string) => (
               <li key={f} className="flex items-start gap-3 p-4 rounded-lg bg-card border border-border">
                 <CheckCircle2 className="h-5 w-5 shrink-0 text-[var(--primary)] mt-0.5" />
                 <span className="text-sm font-medium text-[var(--dark)]">{f}</span>
