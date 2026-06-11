@@ -82,10 +82,14 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { title: "Universe Freight Logistics — Best Logistic Company in India" },
       { name: "description", content: "End-to-end freight forwarding, customs brokerage, warehousing and supply chain solutions across sea, air, road and rail." },
       { name: "author", content: "Universe Freight Logistics" },
-      { property: "og:title", content: "Universe Freight Logistics" },
-      { property: "og:description", content: "Trusted global freight forwarding and logistics partner." },
+      { property: "og:title", content: "Universe Freight Logistics — Best Logistic Company in India" },
+      { property: "og:description", content: "End-to-end freight forwarding, customs brokerage, warehousing and supply chain solutions across sea, air, road and rail." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
+      { name: "twitter:title", content: "Universe Freight Logistics — Best Logistic Company in India" },
+      { name: "twitter:description", content: "End-to-end freight forwarding, customs brokerage, warehousing and supply chain solutions across sea, air, road and rail." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/1041fd86-2414-498f-ad15-eea88eddfc1b/id-preview-f119a468--6a72ee16-b000-4835-9e37-ff274f568792.lovable.app-1781113705175.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/1041fd86-2414-498f-ad15-eea88eddfc1b/id-preview-f119a468--6a72ee16-b000-4835-9e37-ff274f568792.lovable.app-1781113705175.png" },
     ],
     links: [
       {
