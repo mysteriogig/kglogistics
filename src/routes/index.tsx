@@ -2,14 +2,14 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Link } from "@tanstack/react-router";
 import { Ship, Plane, Truck, Train, Warehouse, FileCheck, Package, Shield, Clock, Award, HeartHandshake, ArrowRight, CheckCircle2, Globe2, Quote, ChevronDown } from "lucide-react";
 import { useState } from "react";
-import heroImg from "@/assets/hero-logistics.jpg";
+import { KGHero } from "@/components/site/KGHero";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Universe Freight Logistics — Best Logistic Company in India" },
+      { title: "KG Logistics — Best Logistic Company in India" },
       { name: "description", content: "Global freight forwarding, customs, warehousing & supply chain solutions across sea, air, road and rail." },
-      { property: "og:title", content: "Universe Freight Logistics" },
+      { property: "og:title", content: "KG Logistics" },
       { property: "og:description", content: "Trusted global freight forwarding and logistics partner from India." },
     ],
   }),
@@ -49,7 +49,7 @@ const faqs = [
 ];
 
 const testimonials = [
-  { name: "Rajesh Kumar", role: "Director, Texmach Exports", text: "Universe Freight has been our logistics backbone for 5 years. Reliable, transparent and always on time." },
+  { name: "Rajesh Kumar", role: "Director, Texmach Exports", text: "KG Logistics has been our logistics backbone for 5 years. Reliable, transparent and always on time." },
   { name: "Priya Menon", role: "Supply Chain Head, Aarvi Ltd", text: "Their customs team is exceptional. They cleared a complex shipment in record time and saved us significant cost." },
   { name: "Mohammed Ali", role: "Owner, Coimbatore Textiles", text: "Friendly team, professional service and competitive pricing. Highly recommended for export shipments." },
 ];
@@ -57,32 +57,7 @@ const testimonials = [
 function Index() {
   return (
     <>
-      {/* HERO */}
-      <section className="relative min-h-[88vh] flex items-center overflow-hidden">
-        <div className="absolute inset-0">
-          <img src={heroImg} alt="Container ship at port" className="h-full w-full object-cover" width={1920} height={1080} />
-          <div className="absolute inset-0 bg-[image:var(--gradient-hero)]" />
-        </div>
-        <div className="relative mx-auto max-w-7xl px-4 py-20 text-white">
-          <span className="inline-flex items-center gap-2 rounded-full bg-white/10 border border-white/20 px-4 py-1.5 text-xs font-medium backdrop-blur">
-            <span className="h-2 w-2 rounded-full bg-[var(--primary-glow)] animate-pulse" /> Trusted Since 2009
-          </span>
-          <h1 className="mt-5 text-4xl sm:text-5xl lg:text-7xl font-bold tracking-tight max-w-4xl leading-[1.05]">
-            Best Logistic Company <span className="text-[var(--primary-glow)]">In India</span>
-          </h1>
-          <p className="mt-5 max-w-2xl text-base sm:text-lg text-white/85">
-            End-to-end freight forwarding, customs brokerage and supply chain solutions — moving your cargo across sea, air, road and rail with absolute reliability.
-          </p>
-          <div className="mt-8 flex flex-wrap gap-3">
-            <Link to="/tracking" className="inline-flex items-center gap-2 rounded-md bg-[image:var(--gradient-primary)] px-6 py-3.5 text-sm font-semibold shadow-[var(--shadow-elegant)] hover:opacity-95 transition">
-              Track Your Shipment <ArrowRight className="h-4 w-4" />
-            </Link>
-            <Link to="/contact" className="inline-flex items-center gap-2 rounded-md border border-white/30 bg-white/5 backdrop-blur px-6 py-3.5 text-sm font-semibold hover:bg-white/10 transition">
-              Get a Quote
-            </Link>
-          </div>
-        </div>
-      </section>
+      <KGHero />
 
       {/* STATS */}
       <section className="bg-[var(--dark)] text-white">
@@ -123,7 +98,7 @@ function Index() {
           <div>
             <SectionHead eyebrow="Why Choose Us" title="Excellence in Every Shipment" desc="" align="left" />
             <p className="mt-4 text-muted-foreground leading-relaxed">
-              For over a decade Universe Freight Logistics has been moving cargo with care, precision and uncompromising professionalism. Our people, processes and global network are built around one promise — your shipment, delivered.
+              For over a decade KG Logistics has been moving cargo with care, precision and uncompromising professionalism. Our people, processes and global network are built around one promise — your shipment, delivered.
             </p>
             <ul className="mt-6 space-y-3">
               {["Dedicated account managers for every client","Real-time shipment visibility 24/7","Licensed customs brokers in-house","Global agent network in 120+ countries"].map((f) => (

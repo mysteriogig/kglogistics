@@ -40,8 +40,8 @@ export function Header() {
       <div className="hidden md:block border-b border-border bg-[var(--dark)] text-white text-xs">
         <div className="mx-auto max-w-7xl px-4 py-2 flex items-center justify-between">
           <div className="flex items-center gap-4">
-            <a href="tel:+919566565005" className="flex items-center gap-1.5 hover:text-[var(--primary-glow)]"><Phone className="h-3 w-3" />+91 95665 65005</a>
-            <a href="mailto:info@universefreightlogistics.com" className="flex items-center gap-1.5 hover:text-[var(--primary-glow)]"><Mail className="h-3 w-3" />info@universefreightlogistics.com</a>
+            <a href="tel:+916381380457" className="flex items-center gap-1.5 hover:text-[var(--primary-glow)]"><Phone className="h-3 w-3" />+91 6381380457</a>
+            <a href="mailto:kglogisticscargo@gmail.com" className="flex items-center gap-1.5 hover:text-[var(--primary-glow)]"><Mail className="h-3 w-3" />kglogisticscargo@gmail.com</a>
           </div>
           <div className="flex items-center gap-3">
             <span className="text-white/70">Follow us:</span>
@@ -61,8 +61,8 @@ export function Header() {
               <Ship className="h-5 w-5" />
             </div>
             <div className="min-w-0">
-              <div className="font-bold text-sm sm:text-base leading-tight text-[var(--dark)] truncate">Universe Freight</div>
-              <div className="text-[10px] sm:text-xs text-muted-foreground leading-tight">Logistics Pvt. Ltd.</div>
+              <div className="font-bold text-sm sm:text-base leading-tight text-[var(--dark)] truncate">KG Logistics</div>
+              <div className="text-[10px] sm:text-xs text-muted-foreground leading-tight">Cargo Services</div>
             </div>
           </Link>
 

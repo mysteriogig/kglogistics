@@ -5,9 +5,9 @@ import { PageHero } from "@/components/site/PageHero";
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
-      { title: "About Us — Universe Freight Logistics" },
-      { name: "description", content: "Learn about Universe Freight Logistics — India's trusted freight forwarding and supply chain partner since 2009." },
-      { property: "og:title", content: "About — Universe Freight Logistics" },
+      { title: "About Us — KG Logistics" },
+      { name: "description", content: "Learn about KG Logistics — India's trusted freight forwarding and supply chain partner since 2009." },
+      { property: "og:title", content: "About — KG Logistics" },
       { property: "og:description", content: "Our mission, vision and values as India's trusted freight forwarder." },
     ],
   }),
@@ -24,7 +24,7 @@ function About() {
             <span className="text-xs font-bold uppercase tracking-[0.2em] text-[var(--primary)]">Who We Are</span>
             <h2 className="mt-3 text-3xl sm:text-4xl font-bold text-[var(--dark)]">A trusted name in Indian logistics since 2009</h2>
             <p className="mt-4 text-muted-foreground leading-relaxed">
-              Universe Freight Logistics Pvt. Ltd. is a full-service freight forwarder headquartered in Coimbatore, India. Over the past 15+ years we have built a reputation for reliability, transparency and deep expertise across sea, air, road and rail freight.
+              KG Logistics is a full-service freight forwarder headquartered in Coimbatore, India. Over the past 15+ years we have built a reputation for reliability, transparency and deep expertise across sea, air, road and rail freight.
             </p>
             <p className="mt-3 text-muted-foreground leading-relaxed">
               From small parcel exports to oversized project cargo, we treat every shipment with the same level of professional care — backed by a global agent network in 120+ countries.
