@@ -4,7 +4,7 @@ import { PageHero } from "@/components/site/PageHero";
 export const Route = createFileRoute("/gallery")({
   head: () => ({
     meta: [
-      { title: "Gallery — Universe Freight Logistics" },
+      { title: "Gallery — KG Logistics" },
       { name: "description", content: "A glimpse of our operations — shipments, warehousing, and projects we've handled." },
     ],
   }),

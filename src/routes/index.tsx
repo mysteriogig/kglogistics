@@ -7,9 +7,9 @@ import heroImg from "@/assets/hero-logistics.jpg";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Universe Freight Logistics — Best Logistic Company in India" },
+      { title: "KG Logistics — Best Logistic Company in India" },
       { name: "description", content: "Global freight forwarding, customs, warehousing & supply chain solutions across sea, air, road and rail." },
-      { property: "og:title", content: "Universe Freight Logistics" },
+      { property: "og:title", content: "KG Logistics" },
       { property: "og:description", content: "Trusted global freight forwarding and logistics partner from India." },
     ],
   }),
@@ -49,7 +49,7 @@ const faqs = [
 ];
 
 const testimonials = [
-  { name: "Rajesh Kumar", role: "Director, Texmach Exports", text: "Universe Freight has been our logistics backbone for 5 years. Reliable, transparent and always on time." },
+  { name: "Rajesh Kumar", role: "Director, Texmach Exports", text: "KG Logistics has been our logistics backbone for 5 years. Reliable, transparent and always on time." },
   { name: "Priya Menon", role: "Supply Chain Head, Aarvi Ltd", text: "Their customs team is exceptional. They cleared a complex shipment in record time and saved us significant cost." },
   { name: "Mohammed Ali", role: "Owner, Coimbatore Textiles", text: "Friendly team, professional service and competitive pricing. Highly recommended for export shipments." },
 ];
@@ -123,7 +123,7 @@ function Index() {
           <div>
             <SectionHead eyebrow="Why Choose Us" title="Excellence in Every Shipment" desc="" align="left" />
             <p className="mt-4 text-muted-foreground leading-relaxed">
-              For over a decade Universe Freight Logistics has been moving cargo with care, precision and uncompromising professionalism. Our people, processes and global network are built around one promise — your shipment, delivered.
+              For over a decade KG Logistics has been moving cargo with care, precision and uncompromising professionalism. Our people, processes and global network are built around one promise — your shipment, delivered.
             </p>
             <ul className="mt-6 space-y-3">
               {["Dedicated account managers for every client","Real-time shipment visibility 24/7","Licensed customs brokers in-house","Global agent network in 120+ countries"].map((f) => (

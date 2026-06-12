@@ -5,9 +5,9 @@ import { PageHero } from "@/components/site/PageHero";
 export const Route = createFileRoute("/services")({
   head: () => ({
     meta: [
-      { title: "Our Services — Universe Freight Logistics" },
+      { title: "Our Services — KG Logistics" },
       { name: "description", content: "Sea, air, road and rail freight, customs brokerage, warehousing, project cargo and more." },
-      { property: "og:title", content: "Services — Universe Freight Logistics" },
+      { property: "og:title", content: "Services — KG Logistics" },
       { property: "og:description", content: "Complete logistics services for exporters and importers." },
     ],
   }),

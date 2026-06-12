@@ -6,9 +6,9 @@ import { PageHero } from "@/components/site/PageHero";
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
-      { title: "Contact Us — Universe Freight Logistics" },
+      { title: "Contact Us — KG Logistics" },
       { name: "description", content: "Get in touch with our team for a freight quote, shipment inquiry, or partnership." },
-      { property: "og:title", content: "Contact — Universe Freight Logistics" },
+      { property: "og:title", content: "Contact — KG Logistics" },
       { property: "og:description", content: "Reach our logistics team in Coimbatore for quotes and support." },
     ],
   }),
@@ -28,9 +28,9 @@ function Contact() {
             <p className="mt-4 text-muted-foreground leading-relaxed">Have a shipment to move or a question about our services? Our team is ready to help.</p>
             <ul className="mt-8 space-y-5">
               {[
-                { icon: MapPin, label: "Office Address", value: "A9 Shanvika Nivas, Sakthi Garden, TVS Nagar Road, Kavundampalayam, Coimbatore - 641 030" },
-                { icon: Phone, label: "Phone", value: "+91 95665 65005", href: "tel:+919566565005" },
-                { icon: Mail, label: "Email", value: "info@universefreightlogistics.com", href: "mailto:info@universefreightlogistics.com" },
+                { icon: MapPin, label: "Office Address", value: "Door No.28-29, 2nd Floor, 100 feet road, DR Rajendra Prasad Road, Near Muthumariyamman Temple, Gandhipuram, Coimbatore - 641 012" },
+                { icon: Phone, label: "Phone", value: "+91 6381380457", href: "tel:+916381380457" },
+                { icon: Mail, label: "Email", value: "kglogisticscargo@gmail.com", href: "mailto:kglogisticscargo@gmail.com" },
                 { icon: Clock, label: "Working Hours", value: "Mon - Sat: 9:00 AM - 7:00 PM" },
               ].map((c) => (
                 <li key={c.label} className="flex gap-4">

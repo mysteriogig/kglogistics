@@ -5,8 +5,8 @@ import { PageHero } from "@/components/site/PageHero";
 export const Route = createFileRoute("/blogs")({
   head: () => ({
     meta: [
-      { title: "Blogs — Universe Freight Logistics" },
-      { name: "description", content: "Insights on freight forwarding, customs, and global trade from Universe Freight Logistics." },
+      { title: "Blogs — KG Logistics" },
+      { name: "description", content: "Insights on freight forwarding, customs, and global trade from KG Logistics." },
     ],
   }),
   component: Blogs,
