@@ -52,14 +52,14 @@ function About() {
         </div>
       </section>
 
-      <section className="py-20 bg-[var(--surface)]">
+      <section className="py-20 ">
         <div className="mx-auto max-w-7xl px-4 grid md:grid-cols-3 gap-6">
           {[
             { icon: Target, title: "Our Mission", desc: "To simplify global trade by providing seamless, reliable and cost-effective freight forwarding services to businesses of all sizes." },
             { icon: Eye, title: "Our Vision", desc: "To be the most trusted logistics partner in Asia — known for our people, our service, and our unwavering commitment to clients." },
             { icon: Heart, title: "Our Values", desc: "Integrity, accountability, customer-first thinking and a relentless drive to improve — these guide every decision we make." },
           ].map((c) => (
-            <div key={c.title} className="p-8 rounded-xl bg-card border border-border shadow-[var(--shadow-card)]">
+            <div key={c.title} className="p-8 rounded-xl glass border border-border shadow-[var(--shadow-card)]">
               <div className="grid h-12 w-12 place-items-center rounded-lg bg-[image:var(--gradient-primary)] text-white"><c.icon className="h-6 w-6" /></div>
               <h3 className="mt-5 text-xl font-bold text-[var(--dark)]">{c.title}</h3>
               <p className="mt-3 text-sm text-muted-foreground leading-relaxed">{c.desc}</p>

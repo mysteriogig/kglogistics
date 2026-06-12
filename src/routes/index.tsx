@@ -60,7 +60,7 @@ function Index() {
       <KGHero />
 
       {/* STATS */}
-      <section className="bg-[var(--dark)] text-white">
+      <section className="glass-dark text-white border-y border-white/10">
         <div className="mx-auto max-w-7xl px-4 py-12 grid grid-cols-2 md:grid-cols-4 gap-6">
           {stats.map((s) => (
             <div key={s.label} className="text-center">
@@ -72,12 +72,12 @@ function Index() {
       </section>
 
       {/* SERVICES */}
-      <section className="py-20 bg-[var(--surface)]">
+      <section className="py-20">
         <div className="mx-auto max-w-7xl px-4">
           <SectionHead eyebrow="What We Do" title="Comprehensive Logistics Services" desc="From port to doorstep — a single partner for every leg of your global supply chain." />
           <div className="mt-12 grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
             {services.map((s) => (
-              <div key={s.name} className="group p-6 rounded-xl bg-card border border-border shadow-[var(--shadow-card)] hover:shadow-[var(--shadow-elegant)] hover:-translate-y-1 transition-all">
+              <div key={s.name} className="group p-6 rounded-2xl glass hover:-translate-y-1 transition-all">
                 <div className="grid h-12 w-12 place-items-center rounded-lg bg-[image:var(--gradient-primary)] text-white">
                   <s.icon className="h-6 w-6" />
                 </div>
@@ -111,7 +111,7 @@ function Index() {
           </div>
           <div className="grid grid-cols-2 gap-4">
             {advantages.map((a) => (
-              <div key={a.title} className="p-6 rounded-xl bg-card border border-border shadow-[var(--shadow-card)] hover:border-[var(--primary)] transition">
+              <div key={a.title} className="p-6 rounded-2xl glass hover:-translate-y-1 transition">
                 <div className="grid h-11 w-11 place-items-center rounded-lg bg-accent text-[var(--primary-dark)]"><a.icon className="h-5 w-5" /></div>
                 <h4 className="mt-4 font-bold text-sm text-[var(--dark)]">{a.title}</h4>
                 <p className="mt-1.5 text-xs text-muted-foreground leading-relaxed">{a.desc}</p>
@@ -122,7 +122,7 @@ function Index() {
       </section>
 
       {/* HOW WE DO */}
-      <section className="py-20 bg-[var(--surface)]">
+      <section className="py-20">
         <div className="mx-auto max-w-7xl px-4">
           <SectionHead eyebrow="Our Process" title="How We Do It" desc="A simple, transparent workflow that gets your cargo moving — fast." />
           <div className="mt-12 grid md:grid-cols-4 gap-6">
@@ -132,7 +132,7 @@ function Index() {
               { n: "03", t: "Customs & Transit", d: "Our team handles documentation and clears customs at both ends." },
               { n: "04", t: "Delivered Safely", d: "On-time delivery with real-time tracking from origin to destination." },
             ].map((s) => (
-              <div key={s.n} className="relative p-6 rounded-xl bg-card border border-border">
+              <div key={s.n} className="relative p-6 rounded-2xl glass">
                 <div className="text-5xl font-bold text-[var(--primary)]/15">{s.n}</div>
                 <h4 className="mt-2 font-bold text-[var(--dark)]">{s.t}</h4>
                 <p className="mt-2 text-sm text-muted-foreground">{s.d}</p>
@@ -148,7 +148,7 @@ function Index() {
           <SectionHead eyebrow="Testimonials" title="Trusted By Businesses Worldwide" desc="" />
           <div className="mt-12 grid md:grid-cols-3 gap-6">
             {testimonials.map((t) => (
-              <div key={t.name} className="p-7 rounded-xl bg-card border border-border shadow-[var(--shadow-card)]">
+              <div key={t.name} className="p-7 rounded-2xl glass">
                 <Quote className="h-8 w-8 text-[var(--primary)]/30" />
                 <p className="mt-4 text-sm leading-relaxed text-[var(--dark)]">"{t.text}"</p>
                 <div className="mt-5 pt-5 border-t border-border">
@@ -162,7 +162,7 @@ function Index() {
       </section>
 
       {/* FAQ */}
-      <section className="py-20 bg-[var(--surface)]">
+      <section className="py-20">
         <div className="mx-auto max-w-3xl px-4">
           <SectionHead eyebrow="FAQ" title="Frequently Asked Questions" desc="" />
           <div className="mt-10 space-y-3">
@@ -172,13 +172,14 @@ function Index() {
       </section>
 
       {/* CTA */}
-      <section className="relative py-20 bg-[image:var(--gradient-primary)] text-white overflow-hidden">
+      <section className="relative py-20 overflow-hidden">
+        <div className="absolute inset-0 glass-dark" />
         <div className="relative mx-auto max-w-5xl px-4 text-center">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold">Ready to ship with confidence?</h2>
-          <p className="mt-4 text-white/90 max-w-2xl mx-auto">Let our team build a logistics solution tailored to your business. Talk to an expert today.</p>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white">Ready to ship with confidence?</h2>
+          <p className="mt-4 text-white/85 max-w-2xl mx-auto">Let our team build a logistics solution tailored to your business. Talk to an expert today.</p>
           <div className="mt-8 flex flex-wrap justify-center gap-3">
-            <Link to="/contact" className="rounded-md bg-white text-[var(--primary-dark)] px-7 py-3.5 text-sm font-bold hover:bg-white/95 transition">Get a Free Quote</Link>
-            <Link to="/tracking" className="rounded-md border border-white/40 px-7 py-3.5 text-sm font-bold hover:bg-white/10 transition">Track Shipment</Link>
+            <Link to="/contact" className="rounded-full glass-btn-primary px-7 py-3.5 text-sm font-bold hover:-translate-y-0.5">Get a Free Quote</Link>
+            <Link to="/tracking" className="rounded-full glass-btn px-7 py-3.5 text-sm font-bold text-white hover:-translate-y-0.5">Track Shipment</Link>
           </div>
         </div>
       </section>
@@ -199,7 +200,7 @@ function SectionHead({ eyebrow, title, desc, align = "center" }: { eyebrow: stri
 function FaqItem({ q, a }: { q: string; a: string }) {
   const [open, setOpen] = useState(false);
   return (
-    <div className="rounded-lg bg-card border border-border overflow-hidden">
+    <div className="rounded-xl glass overflow-hidden">
       <button onClick={() => setOpen(!open)} className="w-full px-5 py-4 flex items-center justify-between text-left">
         <span className="font-semibold text-sm text-[var(--dark)]">{q}</span>
         <ChevronDown className={`h-4 w-4 text-[var(--primary)] transition ${open ? "rotate-180" : ""}`} />

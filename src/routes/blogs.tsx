@@ -28,7 +28,7 @@ function Blogs() {
       <section className="py-20">
         <div className="mx-auto max-w-7xl px-4 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {posts.map((p, i) => (
-            <article key={i} className="group rounded-xl bg-card border border-border shadow-[var(--shadow-card)] hover:shadow-[var(--shadow-elegant)] hover:-translate-y-1 transition-all overflow-hidden">
+            <article key={i} className="group rounded-xl glass border border-border shadow-[var(--shadow-card)] hover:shadow-[var(--shadow-elegant)] hover:-translate-y-1 transition-all overflow-hidden">
               <div className="aspect-[16/10] bg-[image:var(--gradient-primary)] relative overflow-hidden">
                 <div className="absolute inset-0 opacity-30 bg-[radial-gradient(circle_at_30%_30%,white,transparent_60%)]" />
                 <div className="absolute bottom-3 left-3 right-3 text-white text-xs font-semibold flex items-center gap-3 opacity-90">

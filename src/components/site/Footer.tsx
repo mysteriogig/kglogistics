@@ -3,7 +3,7 @@ import { Ship, Phone, Mail, MapPin, Facebook, Linkedin, Twitter, Instagram } fro
 
 export function Footer() {
   return (
-    <footer className="bg-[var(--dark)] text-white/80">
+    <footer className="relative glass-dark text-white/85 border-t border-white/10">
       <div className="mx-auto max-w-7xl px-4 py-14 grid gap-10 md:grid-cols-2 lg:grid-cols-4">
         <div>
           <Link to="/" className="flex items-center gap-2.5">

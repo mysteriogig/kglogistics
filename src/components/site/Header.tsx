@@ -35,9 +35,9 @@ export function Header() {
   }, []);
 
   return (
-    <header className={cn("sticky top-0 z-50 w-full transition-all", scrolled ? "bg-background/95 backdrop-blur shadow-sm" : "bg-background")}>
+    <header className={cn("sticky top-0 z-50 w-full transition-all", scrolled ? "glass shadow-sm" : "bg-white/40 backdrop-blur-xl border-b border-white/40")}>
       {/* Top bar */}
-      <div className="hidden md:block border-b border-border bg-[var(--dark)] text-white text-xs">
+      <div className="hidden md:block border-b border-white/10 bg-[#001a35]/80 backdrop-blur text-white text-xs">
         <div className="mx-auto max-w-7xl px-4 py-2 flex items-center justify-between">
           <div className="flex items-center gap-4">
             <a href="tel:+916381380457" className="flex items-center gap-1.5 hover:text-[var(--primary-glow)]"><Phone className="h-3 w-3" />+91 6381380457</a>
@@ -88,10 +88,10 @@ export function Header() {
           </nav>
 
           <div className="flex items-center gap-2">
-            <Link to="/tracking" className="hidden md:inline-flex items-center rounded-md bg-[image:var(--gradient-primary)] px-4 py-2 text-sm font-semibold text-white shadow-md hover:opacity-95 transition">
+            <Link to="/tracking" className="hidden md:inline-flex items-center rounded-full glass-btn-primary px-5 py-2 text-sm font-semibold hover:-translate-y-0.5">
               Track Shipment
             </Link>
-            <button onClick={() => setOpen(!open)} className="lg:hidden grid h-10 w-10 place-items-center rounded-md border border-border" aria-label="Menu">
+            <button onClick={() => setOpen(!open)} className="lg:hidden grid h-10 w-10 place-items-center rounded-full glass-btn" aria-label="Menu">
               {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
             </button>
           </div>
@@ -100,7 +100,7 @@ export function Header() {
 
       {/* Mobile menu */}
       {open && (
-        <div className="lg:hidden border-t border-border bg-background">
+        <div className="lg:hidden glass border-t border-white/30">
           <nav className="mx-auto max-w-7xl px-4 py-3 flex flex-col">
             <MobileLink to="/" onClick={() => setOpen(false)}>Home</MobileLink>
             <MobileLink to="/about" onClick={() => setOpen(false)}>About</MobileLink>
@@ -128,7 +128,7 @@ export function Header() {
             <MobileLink to="/gallery" onClick={() => setOpen(false)}>Gallery</MobileLink>
             <MobileLink to="/blogs" onClick={() => setOpen(false)}>Blogs</MobileLink>
             <MobileLink to="/contact" onClick={() => setOpen(false)}>Contact</MobileLink>
-            <Link to="/tracking" onClick={() => setOpen(false)} className="mt-3 inline-flex items-center justify-center rounded-md bg-[image:var(--gradient-primary)] px-4 py-3 text-sm font-semibold text-white shadow-md">
+            <Link to="/tracking" onClick={() => setOpen(false)} className="mt-3 inline-flex items-center justify-center rounded-full glass-btn-primary px-4 py-3 text-sm font-semibold">
               Track Shipment
             </Link>
           </nav>
