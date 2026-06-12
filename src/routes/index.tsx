@@ -200,7 +200,7 @@ function SectionHead({ eyebrow, title, desc, align = "center" }: { eyebrow: stri
 function FaqItem({ q, a }: { q: string; a: string }) {
   const [open, setOpen] = useState(false);
   return (
-    <div className="rounded-lg bg-card border border-border overflow-hidden">
+    <div className="rounded-xl glass overflow-hidden">
       <button onClick={() => setOpen(!open)} className="w-full px-5 py-4 flex items-center justify-between text-left">
         <span className="font-semibold text-sm text-[var(--dark)]">{q}</span>
         <ChevronDown className={`h-4 w-4 text-[var(--primary)] transition ${open ? "rotate-180" : ""}`} />
