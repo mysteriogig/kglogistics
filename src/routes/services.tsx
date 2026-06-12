@@ -40,7 +40,7 @@ function Services() {
           </div>
           <div className="mt-12 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {services.map((s) => (
-              <Link key={s.name} to={s.to} className="group p-7 rounded-xl bg-card border border-border shadow-[var(--shadow-card)] hover:shadow-[var(--shadow-elegant)] hover:-translate-y-1 transition-all">
+              <Link key={s.name} to={s.to} className="group p-7 rounded-xl glass border border-border shadow-[var(--shadow-card)] hover:shadow-[var(--shadow-elegant)] hover:-translate-y-1 transition-all">
                 <div className="grid h-12 w-12 place-items-center rounded-lg bg-[image:var(--gradient-primary)] text-white">
                   <s.icon className="h-6 w-6" />
                 </div>

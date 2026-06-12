@@ -75,7 +75,7 @@ function TrackingPage() {
           </div>
 
           {/* TRACKING FORM */}
-          <form onSubmit={onSubmit} className="mt-10 p-6 sm:p-8 rounded-2xl bg-card border border-border shadow-[var(--shadow-elegant)]">
+          <form onSubmit={onSubmit} className="mt-10 p-6 sm:p-8 rounded-2xl glass border border-border shadow-[var(--shadow-elegant)]">
             <div className="grid sm:grid-cols-[1fr_auto_auto] gap-3">
               <div className="relative">
                 <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
@@ -105,7 +105,7 @@ function TrackingPage() {
 
           {/* RESULT */}
           {showResult && (
-            <div className="mt-8 rounded-2xl bg-card border border-border shadow-[var(--shadow-card)] overflow-hidden">
+            <div className="mt-8 rounded-2xl glass border border-border shadow-[var(--shadow-card)] overflow-hidden">
               <div className="p-6 sm:p-8 bg-[var(--dark)] text-white">
                 <div className="flex flex-wrap items-center justify-between gap-3">
                   <div>
@@ -153,7 +153,7 @@ function TrackingPage() {
       </section>
 
       {/* DOCUMENTS */}
-      <section className="py-16 sm:py-20 bg-[var(--surface)]">
+      <section className="py-16 sm:py-20 ">
         <div className="mx-auto max-w-7xl px-4">
           <div className="text-center">
             <span className="text-xs font-bold uppercase tracking-[0.2em] text-[var(--primary)]">Documentation</span>
@@ -177,7 +177,7 @@ function TrackingPage() {
           </div>
           <div className="mt-12 grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
             {advantages.map((a) => (
-              <div key={a.title} className="text-center p-7 rounded-xl bg-card border border-border shadow-[var(--shadow-card)] hover:shadow-[var(--shadow-elegant)] hover:-translate-y-1 transition-all">
+              <div key={a.title} className="text-center p-7 rounded-xl glass border border-border shadow-[var(--shadow-card)] hover:shadow-[var(--shadow-elegant)] hover:-translate-y-1 transition-all">
                 <div className="mx-auto grid h-14 w-14 place-items-center rounded-full bg-[image:var(--gradient-primary)] text-white">
                   <a.icon className="h-6 w-6" />
                 </div>
@@ -220,7 +220,7 @@ function InfoCell({ icon: Icon, label, value }: { icon: typeof Package; label: s
 
 function DocCard({ title, items }: { title: string; items: string[] }) {
   return (
-    <div className="p-7 rounded-2xl bg-card border border-border shadow-[var(--shadow-card)]">
+    <div className="p-7 rounded-2xl glass border border-border shadow-[var(--shadow-card)]">
       <h3 className="text-lg font-bold text-[var(--dark)] pb-4 border-b border-border">{title}</h3>
       <ul className="mt-5 space-y-3">
         {items.map((it) => (

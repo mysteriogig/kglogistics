@@ -44,7 +44,7 @@ function Contact() {
             </ul>
           </div>
 
-          <form onSubmit={(e) => { e.preventDefault(); setSent(true); }} className="p-7 sm:p-10 rounded-2xl bg-card border border-border shadow-[var(--shadow-elegant)]">
+          <form onSubmit={(e) => { e.preventDefault(); setSent(true); }} className="p-7 sm:p-10 rounded-2xl glass border border-border shadow-[var(--shadow-elegant)]">
             <h3 className="text-2xl font-bold text-[var(--dark)]">Send us a message</h3>
             <p className="mt-1 text-sm text-muted-foreground">We'll get back to you within 24 hours.</p>
             <div className="mt-6 grid sm:grid-cols-2 gap-4">
