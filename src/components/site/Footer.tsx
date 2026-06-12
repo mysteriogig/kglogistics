@@ -50,6 +50,7 @@ export function Footer() {
           <ul className="space-y-3 text-sm">
             <li className="flex gap-3"><MapPin className="h-5 w-5 shrink-0 text-[var(--primary-glow)]" />Door No.28-29, 2nd Floor, 100 feet road, DR Rajendra Prasad Road, Near Muthumariyamman Temple, Gandhipuram, Coimbatore - 641 012</li>
             <li className="flex gap-3"><Phone className="h-5 w-5 shrink-0 text-[var(--primary-glow)]" /><a href="tel:+916381380457">+91 6381380457</a></li>
+            <li className="flex gap-3"><Phone className="h-5 w-5 shrink-0 text-[var(--primary-glow)]" /><a href="tel:+918778500577">+91 8778500577</a></li>
             <li className="flex gap-3"><Mail className="h-5 w-5 shrink-0 text-[var(--primary-glow)]" /><a href="mailto:kglogisticscargo@gmail.com" className="break-all">kglogisticscargo@gmail.com</a></li>
           </ul>
         </div>
