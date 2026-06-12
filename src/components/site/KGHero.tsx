@@ -57,10 +57,10 @@ const fadeUp = {
 
 export function KGHero() {
   return (
-    <section className="relative min-h-[92vh] w-full flex items-center justify-center overflow-hidden bg-[#001a35]">
-      {/* Ambient gradient glow */}
-      <div className="absolute inset-0 bg-gradient-to-br from-[#004990]/30 via-transparent to-[#A7A9AC]/10 blur-3xl" />
-      <div className="absolute -top-1/3 left-1/2 -translate-x-1/2 h-[700px] w-[1000px] rounded-full bg-[#004990]/40 blur-[120px]" />
+    <section className="relative min-h-[92vh] w-full flex items-center justify-center overflow-hidden">
+      {/* Deep tinted glass over the global animated background */}
+      <div className="absolute inset-0 bg-gradient-to-br from-[#001a35]/85 via-[#003a73]/75 to-[#004990]/70 backdrop-blur-sm" />
+      <div className="absolute -top-1/3 left-1/2 -translate-x-1/2 h-[700px] w-[1000px] rounded-full bg-[#7fb3e0]/30 blur-[140px]" />
 
       {/* Floating parcels */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -99,12 +99,12 @@ export function KGHero() {
         <motion.div custom={3} variants={fadeUp} initial="hidden" animate="visible"
           className="mt-10 flex flex-wrap items-center justify-center gap-3">
           <Link to="/contact"
-            className="group inline-flex items-center gap-2 rounded-full bg-[#004990] hover:bg-[#005ab0] px-7 py-3.5 text-sm font-semibold text-white shadow-[0_10px_30px_-10px_rgba(0,73,144,0.8)] transition-all">
+            className="group inline-flex items-center gap-2 rounded-full glass-btn-primary px-7 py-3.5 text-sm font-semibold hover:-translate-y-0.5">
             Get a Quote
             <ArrowRight className="h-4 w-4 group-hover:translate-x-0.5 transition-transform" />
           </Link>
           <Link to="/tracking"
-            className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/[0.04] backdrop-blur px-7 py-3.5 text-sm font-semibold text-white/90 hover:bg-white/[0.08] transition">
+            className="inline-flex items-center gap-2 rounded-full glass-btn text-white px-7 py-3.5 text-sm font-semibold hover:-translate-y-0.5">
             Track Shipment
           </Link>
         </motion.div>
@@ -120,7 +120,7 @@ export function KGHero() {
       </div>
 
       {/* Bottom fade to page */}
-      <div className="absolute bottom-0 inset-x-0 h-32 bg-gradient-to-t from-background to-transparent pointer-events-none" />
+      <div className="absolute bottom-0 inset-x-0 h-32 bg-gradient-to-t from-white/40 to-transparent pointer-events-none" />
     </section>
   );
 }
