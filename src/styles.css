@@ -152,3 +152,64 @@
     color: var(--color-foreground);
   }
 }
+
+/* ============ Liquid Glass System ============ */
+@utility glass {
+  background: linear-gradient(135deg, rgba(255,255,255,0.55) 0%, rgba(255,255,255,0.25) 100%);
+  backdrop-filter: blur(22px) saturate(180%);
+  border: 1px solid rgba(255,255,255,0.5);
+  box-shadow:
+    0 8px 32px 0 rgba(0, 73, 144, 0.12),
+    inset 0 1px 0 0 rgba(255,255,255,0.7),
+    inset 0 -1px 0 0 rgba(0,73,144,0.05);
+}
+
+@utility glass-dark {
+  background: linear-gradient(135deg, rgba(0,73,144,0.35) 0%, rgba(0,30,70,0.45) 100%);
+  backdrop-filter: blur(22px) saturate(180%);
+  border: 1px solid rgba(255,255,255,0.18);
+  box-shadow:
+    0 8px 32px 0 rgba(0, 20, 50, 0.35),
+    inset 0 1px 0 0 rgba(255,255,255,0.18);
+}
+
+@utility glass-btn {
+  position: relative;
+  background: linear-gradient(135deg, rgba(255,255,255,0.35) 0%, rgba(255,255,255,0.12) 100%);
+  backdrop-filter: blur(18px) saturate(180%);
+  border: 1px solid rgba(255,255,255,0.45);
+  box-shadow:
+    0 4px 18px -4px rgba(0, 73, 144, 0.25),
+    inset 0 1px 0 0 rgba(255,255,255,0.6);
+  transition: all 0.25s ease;
+}
+@utility glass-btn-primary {
+  background: linear-gradient(135deg, rgba(0,90,176,0.85) 0%, rgba(0,58,115,0.9) 100%);
+  backdrop-filter: blur(18px) saturate(180%);
+  border: 1px solid rgba(255,255,255,0.25);
+  color: #fff;
+  box-shadow:
+    0 8px 24px -6px rgba(0, 73, 144, 0.5),
+    inset 0 1px 0 0 rgba(255,255,255,0.35);
+  transition: all 0.25s ease;
+}
+
+/* ============ Animated Background ============ */
+@keyframes blob-drift-1 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(60px, -40px) scale(1.1); }
+  66% { transform: translate(-40px, 60px) scale(0.95); }
+}
+@keyframes blob-drift-2 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(-70px, 50px) scale(1.05); }
+  66% { transform: translate(50px, -30px) scale(0.9); }
+}
+@keyframes blob-drift-3 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(40px, 40px) scale(1.15); }
+}
+
+@utility blob-1 { animation: blob-drift-1 22s ease-in-out infinite; }
+@utility blob-2 { animation: blob-drift-2 26s ease-in-out infinite; }
+@utility blob-3 { animation: blob-drift-3 30s ease-in-out infinite; }
