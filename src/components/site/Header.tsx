@@ -2,6 +2,7 @@ import { Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { Menu, X, ChevronDown, Facebook, Linkedin, Twitter, Instagram, Phone, Mail, Ship, Plane, Truck, Train } from "lucide-react";
 import { cn } from "@/lib/utils";
+import kgLogo from "@/assets/kg-logo.png.asset.json";
 
 const freightServices = [
   { name: "Sea Freight Services", to: "/services/sea-freight", icon: Ship },
@@ -56,14 +57,8 @@ export function Header() {
       {/* Main nav */}
       <div className="mx-auto max-w-7xl px-4">
         <div className="flex h-16 lg:h-20 items-center justify-between gap-4">
-          <Link to="/" className="flex items-center gap-2.5 min-w-0">
-            <div className="grid h-10 w-10 shrink-0 place-items-center rounded-lg bg-[image:var(--gradient-primary)] text-white shadow-md">
-              <Ship className="h-5 w-5" />
-            </div>
-            <div className="min-w-0">
-              <div className="font-bold text-sm sm:text-base leading-tight text-[var(--dark)] truncate">KG Logistics</div>
-              <div className="text-[10px] sm:text-xs text-muted-foreground leading-tight">Cargo Services</div>
-            </div>
+          <Link to="/" className="flex items-center min-w-0 shrink">
+            <img src={kgLogo.url} alt="KG Logistics" className="h-9 sm:h-11 lg:h-12 w-auto object-contain" />
           </Link>
 
           <nav className="hidden lg:flex items-center gap-1">
