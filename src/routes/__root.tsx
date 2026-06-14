@@ -131,6 +131,7 @@ function RootComponent() {
         <main className="flex-1">
           <Outlet />
         </main>
+        <PreFooter />
         <Footer />
       </div>
     </QueryClientProvider>
