@@ -42,7 +42,7 @@ export function Header() {
         <div className="mx-auto max-w-7xl px-4 py-2 flex items-center justify-between">
           <div className="flex items-center gap-4">
             <a href="tel:+916381380457" className="flex items-center gap-1.5 hover:text-[var(--primary-glow)]"><Phone className="h-3 w-3" />+91 6381380457</a>
-            <a href="mailto:kglogisticscargo@gmail.com" className="flex items-center gap-1.5 hover:text-[var(--primary-glow)]"><Mail className="h-3 w-3" />kglogisticscargo@gmail.com</a>
+            <a href="mailto:kglogistics.cbe@gmail.com" className="flex items-center gap-1.5 hover:text-[var(--primary-glow)]"><Mail className="h-3 w-3" />kglogistics.cbe@gmail.com</a>
           </div>
           <div className="flex items-center gap-3">
             <span className="text-white/70">Follow us:</span>
