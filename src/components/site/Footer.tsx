@@ -1,5 +1,6 @@
 import { Link } from "@tanstack/react-router";
-import { Ship, Phone, Mail, MapPin, Facebook, Linkedin, Twitter, Instagram } from "lucide-react";
+import { Phone, Mail, MapPin, Facebook, Linkedin, Twitter, Instagram } from "lucide-react";
+import logoAsset from "@/assets/kg-logo-new.png.asset.json";
 
 export function Footer() {
   return (
