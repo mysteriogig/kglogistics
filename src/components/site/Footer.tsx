@@ -1,19 +1,14 @@
 import { Link } from "@tanstack/react-router";
-import { Ship, Phone, Mail, MapPin, Facebook, Linkedin, Twitter, Instagram } from "lucide-react";
+import { Phone, Mail, MapPin, Facebook, Linkedin, Twitter, Instagram } from "lucide-react";
+import logoAsset from "@/assets/kg-logo-new.png.asset.json";
 
 export function Footer() {
   return (
     <footer className="relative glass-dark text-white/85 border-t border-white/10">
       <div className="mx-auto max-w-7xl px-4 py-14 grid gap-10 md:grid-cols-2 lg:grid-cols-4">
         <div>
-          <Link to="/" className="flex items-center gap-2.5">
-            <div className="grid h-10 w-10 place-items-center rounded-lg bg-[image:var(--gradient-primary)]">
-              <Ship className="h-5 w-5 text-white" />
-            </div>
-            <div>
-              <div className="font-bold text-white">KG Logistics</div>
-              <div className="text-xs text-white/60">Cargo Services</div>
-            </div>
+          <Link to="/">
+            <img src={logoAsset.url} alt="KG Logistics" className="h-12 w-auto" />
           </Link>
           <p className="mt-4 text-sm leading-relaxed">
             One of the most trusted logistics partners in India, delivering end-to-end freight forwarding, customs, and supply chain solutions worldwide.
