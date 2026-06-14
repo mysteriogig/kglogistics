@@ -2,7 +2,7 @@ import { Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { Menu, X, ChevronDown, Facebook, Linkedin, Twitter, Instagram, Phone, Mail, Ship, Plane, Truck, Train } from "lucide-react";
 import { cn } from "@/lib/utils";
-import kgLogo from "@/assets/kg-logo.png.asset.json";
+import kgLogo from "@/assets/kg-logo-new.png.asset.json";
 
 const freightServices = [
   { name: "Sea Freight Services", to: "/services/sea-freight", icon: Ship },
