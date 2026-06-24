@@ -6,9 +6,9 @@ export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
       { title: "About Us — KG Logistics" },
-      { name: "description", content: "Learn about KG Logistics — India's trusted freight forwarding and supply chain partner since 2009." },
+      { name: "description", content: "Learn about KG Logistics — India's trusted domestic forwarding and supply chain partner since 2009." },
       { property: "og:title", content: "About — KG Logistics" },
-      { property: "og:description", content: "Our mission, vision and values as India's trusted freight forwarder." },
+      { property: "og:description", content: "Our mission, vision and values as India's trusted domestic forwarder." },
     ],
   }),
   component: About,
@@ -24,7 +24,7 @@ function About() {
             <span className="text-xs font-bold uppercase tracking-[0.2em] text-[var(--primary)]">Who We Are</span>
             <h2 className="mt-3 text-3xl sm:text-4xl font-bold text-[var(--dark)]">A trusted name in Indian logistics since 2009</h2>
             <p className="mt-4 text-muted-foreground leading-relaxed">
-              KG Logistics is a full-service freight forwarder headquartered in Coimbatore, India. Over the past 15+ years we have built a reputation for reliability, transparency and deep expertise across sea, air, road and rail freight.
+              KG Logistics is a full-service domestic forwarder headquartered in Coimbatore, India. Over the past 15+ years we have built a reputation for reliability, transparency and deep expertise across sea, road and rail domestic services.
             </p>
             <p className="mt-3 text-muted-foreground leading-relaxed">
               From small parcel exports to oversized project cargo, we treat every shipment with the same level of professional care — backed by a global agent network in 120+ countries.
@@ -55,7 +55,7 @@ function About() {
       <section className="py-20 ">
         <div className="mx-auto max-w-7xl px-4 grid md:grid-cols-3 gap-6">
           {[
-            { icon: Target, title: "Our Mission", desc: "To simplify global trade by providing seamless, reliable and cost-effective freight forwarding services to businesses of all sizes." },
+            { icon: Target, title: "Our Mission", desc: "To simplify global trade by providing seamless, reliable and cost-effective domestic forwarding services to businesses of all sizes." },
             { icon: Eye, title: "Our Vision", desc: "To be the most trusted logistics partner in Asia — known for our people, our service, and our unwavering commitment to clients." },
             { icon: Heart, title: "Our Values", desc: "Integrity, accountability, customer-first thinking and a relentless drive to improve — these guide every decision we make." },
           ].map((c) => (
