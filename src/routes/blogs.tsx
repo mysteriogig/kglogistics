@@ -6,7 +6,7 @@ export const Route = createFileRoute("/blogs")({
   head: () => ({
     meta: [
       { title: "Blogs — KG Logistics" },
-      { name: "description", content: "Insights on freight forwarding, customs, and global trade from KG Logistics." },
+      { name: "description", content: "Insights on domestic forwarding, customs, and global trade from KG Logistics." },
     ],
   }),
   component: Blogs,
@@ -14,7 +14,7 @@ export const Route = createFileRoute("/blogs")({
 
 const posts = [
   { title: "Understanding INCOTERMS 2020: A Practical Guide", date: "Nov 28, 2026", author: "Universe Team", excerpt: "A clear breakdown of the eleven INCOTERMS and how to choose the right one for your shipment." },
-  { title: "Sea Freight vs Air Freight: Which Is Right For You?", date: "Nov 15, 2026", author: "Universe Team", excerpt: "Cost, transit time, reliability — here's how to make the right choice for your cargo." },
+  { title: "Sea vs Road Domestic: Which Is Right For You?", date: "Nov 15, 2026", author: "Universe Team", excerpt: "Cost, transit time, reliability — here's how to make the right choice for your cargo." },
   { title: "How to Reduce Customs Delays at Indian Ports", date: "Oct 30, 2026", author: "Universe Team", excerpt: "Documentation tips and process improvements that can save you days at customs." },
   { title: "Project Cargo: 5 Things to Plan in Advance", date: "Oct 12, 2026", author: "Universe Team", excerpt: "Moving oversized cargo? Here are the five things every shipper should plan well in advance." },
   { title: "Warehouse Best Practices for E-Commerce", date: "Sep 24, 2026", author: "Universe Team", excerpt: "How modern warehouse design helps online sellers ship faster and reduce errors." },
