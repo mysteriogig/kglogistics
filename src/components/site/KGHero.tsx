@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ArrowRight, Package, Truck, Plane, Ship, Train } from "lucide-react";
+import { ArrowRight, Package, Truck, Ship, Train } from "lucide-react";
 import { Link } from "@tanstack/react-router";
 import { cn } from "@/lib/utils";
 
@@ -114,7 +114,7 @@ export function KGHero() {
           transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
           className="text-white/80"
         >
-          <Plane className="h-16 w-16 sm:h-28 sm:w-28 drop-shadow-[0_8px_24px_rgba(127,179,224,0.5)]" strokeWidth={1.2} />
+          <Truck className="h-16 w-16 sm:h-28 sm:w-28 drop-shadow-[0_8px_24px_rgba(127,179,224,0.5)]" strokeWidth={1.2} />
         </motion.div>
       </motion.div>
 
