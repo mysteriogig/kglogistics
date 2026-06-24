@@ -6,14 +6,18 @@ import { PageHero } from "@/components/site/PageHero";
 export const Route = createFileRoute("/tracking")({
   head: () => ({
     meta: [
-      { title: "Track Shipment & Documents — KG Logistics" },
-      { name: "description", content: "Track your AWB or Bill of Lading in real time. Find required export and import documentation." },
-      { property: "og:title", content: "Track Shipment — KG Logistics" },
-      { property: "og:description", content: "Real-time tracking and complete documentation guide for exporters and importers." },
+      { title: "Documents — KG Logistics" },
+      { name: "description", content: "Find required export and import documentation for your shipments." },
+      { property: "og:title", content: "Documents — KG Logistics" },
+      { property: "og:description", content: "Complete documentation guide for exporters and importers." },
     ],
   }),
   component: TrackingPage,
 });
+
+// Tracking feature is hidden in the current release.
+// Flip to `true` to re-enable the shipment tracking UI.
+const SHOW_TRACKING = false;
 
 const exportDocs = [
   "KYC Documents",
@@ -60,9 +64,10 @@ function TrackingPage() {
 
   return (
     <>
-      <PageHero title="Documents & Tracking" crumbs={[{ label: "Home", to: "/" }, { label: "Documents" }, { label: "Tracking" }]} />
+      <PageHero title="Documents" crumbs={[{ label: "Home", to: "/" }, { label: "Documents" }]} />
 
-      {/* TRACKING SECTION */}
+      {/* TRACKING SECTION — hidden until tracking goes live */}
+      {SHOW_TRACKING && (
       <section className="py-16 sm:py-20">
         <div className="mx-auto max-w-5xl px-4">
           <div className="text-center">
@@ -70,7 +75,7 @@ function TrackingPage() {
             <h2 className="mt-3 text-3xl sm:text-4xl font-bold text-[var(--dark)]">TRACKING</h2>
             <div className="mt-4 mx-auto h-1 w-16 bg-[image:var(--gradient-primary)] rounded-full" />
             <p className="mt-5 max-w-2xl mx-auto text-muted-foreground leading-relaxed">
-              Track your shipment in real time using your Airway Bill (AWB) or Bill of Lading (BL) number. Get instant status updates, current location, and estimated delivery information across all our freight services.
+              Track your shipment in real time using your Airway Bill (AWB) or Bill of Lading (BL) number. Get instant status updates, current location, and estimated delivery information across all our services.
             </p>
           </div>
 
@@ -91,10 +96,9 @@ function TrackingPage() {
                 onChange={(e) => setService(e.target.value)}
                 className="h-12 px-4 rounded-md border border-border bg-background text-sm focus:outline-none focus:ring-2 focus:ring-[var(--primary)]"
               >
-                <option value="sea">Sea Freight</option>
-                <option value="air">Air Freight</option>
-                <option value="road">Road Freight</option>
-                <option value="rail">Rail Freight</option>
+                <option value="sea">Sea Domestic</option>
+                <option value="road">Road Domestic</option>
+                <option value="rail">Rail Domestic</option>
               </select>
               <button type="submit" className="h-12 px-7 rounded-md bg-[image:var(--gradient-primary)] text-white font-semibold text-sm shadow-md hover:opacity-95 transition">
                 Track Now
@@ -151,6 +155,7 @@ function TrackingPage() {
           )}
         </div>
       </section>
+      )}
 
       {/* DOCUMENTS */}
       <section className="py-16 sm:py-20 ">
@@ -172,7 +177,7 @@ function TrackingPage() {
         <div className="mx-auto max-w-7xl px-4">
           <div className="text-center">
             <span className="text-xs font-bold uppercase tracking-[0.2em] text-[var(--primary)]">Our Advantages</span>
-            <h2 className="mt-3 text-3xl sm:text-4xl font-bold text-[var(--dark)]">Excellence in Logistics & Freight</h2>
+            <h2 className="mt-3 text-3xl sm:text-4xl font-bold text-[var(--dark)]">Excellence in Logistics & Domestic Services</h2>
             <p className="mt-3 text-muted-foreground max-w-2xl mx-auto">Why thousands of exporters and importers trust us with their cargo every single day.</p>
           </div>
           <div className="mt-12 grid sm:grid-cols-2 lg:grid-cols-4 gap-5">

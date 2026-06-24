@@ -7,7 +7,7 @@ export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
       { title: "Contact Us — KG Logistics" },
-      { name: "description", content: "Get in touch with our team for a freight quote, shipment inquiry, or partnership." },
+      { name: "description", content: "Get in touch with our team for a domestic shipping quote, inquiry, or partnership." },
       { property: "og:title", content: "Contact — KG Logistics" },
       { property: "og:description", content: "Reach our logistics team in Coimbatore for quotes and support." },
     ],

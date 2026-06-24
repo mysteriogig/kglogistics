@@ -11,7 +11,7 @@ export function Footer() {
             <img src={logoAsset.url} alt="KG Logistics" className="h-12 w-auto" />
           </Link>
           <p className="mt-4 text-sm leading-relaxed">
-            One of the most trusted logistics partners in India, delivering end-to-end freight forwarding, customs, and supply chain solutions worldwide.
+          One of the most trusted logistics partners in India, delivering end-to-end domestic forwarding, customs, and supply chain solutions worldwide.
           </p>
           <div className="mt-5 flex items-center gap-3">
             {[Facebook, Linkedin, Twitter, Instagram].map((Icon, i) => (
@@ -25,7 +25,7 @@ export function Footer() {
         <div>
           <h4 className="font-semibold text-white mb-4">Quick Links</h4>
           <ul className="space-y-2.5 text-sm">
-            {[["Home","/"],["About Us","/about"],["Services","/services"],["Tracking","/tracking"],["Gallery","/gallery"],["Blogs","/blogs"],["Contact","/contact"]].map(([l,h]) => (
+            {[["Home","/"],["About Us","/about"],["Services","/services"],["Gallery","/gallery"],["Blogs","/blogs"],["Contact","/contact"]].map(([l,h]) => (
               <li key={l}><Link to={h} className="hover:text-[var(--primary-glow)] transition">{l}</Link></li>
             ))}
           </ul>
@@ -34,7 +34,7 @@ export function Footer() {
         <div>
           <h4 className="font-semibold text-white mb-4">Our Services</h4>
           <ul className="space-y-2.5 text-sm">
-            {["Sea Freight","Air Freight","Road Freight","Rail Freight","Customs Brokerage","Warehouse & Distribution","Project Cargo"].map((s) => (
+            {["Sea Domestic","Road Domestic","Rail Domestic","Customs Brokerage","Warehouse & Distribution","Project Cargo"].map((s) => (
               <li key={s}><Link to="/services" className="hover:text-[var(--primary-glow)] transition">{s}</Link></li>
             ))}
           </ul>

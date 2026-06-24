@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ArrowRight, Package, Truck, Plane, Ship, Train } from "lucide-react";
+import { ArrowRight, Package, Truck, Ship, Train } from "lucide-react";
 import { Link } from "@tanstack/react-router";
 import { cn } from "@/lib/utils";
 
@@ -114,7 +114,7 @@ export function KGHero() {
           transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
           className="text-white/80"
         >
-          <Plane className="h-16 w-16 sm:h-28 sm:w-28 drop-shadow-[0_8px_24px_rgba(127,179,224,0.5)]" strokeWidth={1.2} />
+          <Truck className="h-16 w-16 sm:h-28 sm:w-28 drop-shadow-[0_8px_24px_rgba(127,179,224,0.5)]" strokeWidth={1.2} />
         </motion.div>
       </motion.div>
 
@@ -138,7 +138,7 @@ export function KGHero() {
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <FloatingContainer delay={0.3} width={210} height={95} rotate={10} bodyFrom="#003566" bodyTo="#001D3D" stamp="KG" stampLabel="EXPRESS" className="left-[-5%] top-[16%]" />
         <FloatingContainer delay={0.5} width={190} height={85} rotate={-14} bodyFrom="#4F8FC9" bodyTo="#003566" stamp="SEA" stampLabel="FRAGILE" className="right-[-4%] top-[58%]" />
-        <FloatingContainer delay={0.4} width={150} height={70} rotate={-6} bodyFrom="#001D3D" bodyTo="#000814" stamp="AIR" stampLabel="PRIORITY" className="left-[6%] bottom-[20%]" />
+        <FloatingContainer delay={0.4} width={150} height={70} rotate={-6} bodyFrom="#001D3D" bodyTo="#000814" stamp="ROAD" stampLabel="PRIORITY" className="left-[6%] bottom-[20%]" />
         <FloatingContainer delay={0.6} width={130} height={62} rotate={18} bodyFrom="#003566" bodyTo="#001D3D" stamp="40HC" stampLabel="EXPORT" className="right-[16%] top-[10%]" />
         <FloatingContainer delay={0.7} width={120} height={58} rotate={-20} bodyFrom="#4F8FC9" bodyTo="#001D3D" stamp="20FT" stampLabel="GLOBAL" className="left-[28%] top-[5%] hidden sm:block" />
       </div>
@@ -164,8 +164,8 @@ export function KGHero() {
 
         <motion.p custom={2} variants={fadeUp} initial="hidden" animate="visible"
           className="mt-6 max-w-2xl mx-auto text-base sm:text-lg lg:text-xl text-white/55 leading-relaxed font-light px-4">
-          KG Logistics moves your cargo across sea, air, road and rail with real-time tracking
-          and guaranteed on-time delivery from Coimbatore to the world.
+          KG Logistics moves your cargo across sea, road and rail with dedicated
+          care and guaranteed on-time delivery from Coimbatore to the world.
         </motion.p>
 
         <motion.div custom={3} variants={fadeUp} initial="hidden" animate="visible"
@@ -175,15 +175,11 @@ export function KGHero() {
             Get a Quote
             <ArrowRight className="h-4 w-4 group-hover:translate-x-0.5 transition-transform" />
           </Link>
-          <Link to="/tracking"
-            className="inline-flex items-center gap-2 rounded-full glass-btn text-white px-7 py-3.5 text-sm font-semibold hover:-translate-y-0.5">
-            Track Shipment
-          </Link>
         </motion.div>
 
         <motion.div custom={4} variants={fadeUp} initial="hidden" animate="visible"
           className="mt-14 flex items-center justify-center gap-8 sm:gap-12 text-white/40">
-          {[Ship, Plane, Truck, Train].map((Icon, i) => (
+          {[Ship, Truck, Train].map((Icon, i) => (
             <div key={i} className="flex flex-col items-center gap-1.5">
               <Icon className="h-5 w-5 sm:h-6 sm:w-6" />
             </div>

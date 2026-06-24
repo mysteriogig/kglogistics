@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Link } from "@tanstack/react-router";
-import { Ship, Plane, Truck, Train, Warehouse, FileCheck, Package, Shield, Clock, Award, HeartHandshake, ArrowRight, CheckCircle2, Globe2, Quote, ChevronDown } from "lucide-react";
+import { Ship, Truck, Train, Warehouse, FileCheck, Package, Shield, Clock, Award, HeartHandshake, ArrowRight, CheckCircle2, Globe2, Quote, ChevronDown } from "lucide-react";
 import { useState } from "react";
 import { KGHero } from "@/components/site/KGHero";
 
@@ -8,19 +8,18 @@ export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       { title: "KG Logistics — Best Logistic Company in India" },
-      { name: "description", content: "Global freight forwarding, customs, warehousing & supply chain solutions across sea, air, road and rail." },
+      { name: "description", content: "Domestic forwarding, customs, warehousing & supply chain solutions across sea, road and rail." },
       { property: "og:title", content: "KG Logistics" },
-      { property: "og:description", content: "Trusted global freight forwarding and logistics partner from India." },
+      { property: "og:description", content: "Trusted domestic forwarding and logistics partner from India." },
     ],
   }),
   component: Index,
 });
 
 const services = [
-  { icon: Ship, name: "Sea Freight", desc: "FCL, LCL and break-bulk shipping with worldwide port coverage." },
-  { icon: Plane, name: "Air Freight", desc: "Time-critical air cargo via leading global carriers." },
-  { icon: Truck, name: "Road Freight", desc: "Pan-India trucking and last-mile delivery network." },
-  { icon: Train, name: "Rail Freight", desc: "Cost-effective rail solutions for bulk consignments." },
+  { icon: Ship, name: "Sea Domestic", desc: "FCL, LCL and break-bulk shipping with worldwide port coverage." },
+  { icon: Truck, name: "Road Domestic", desc: "Pan-India trucking and last-mile delivery network." },
+  { icon: Train, name: "Rail Domestic", desc: "Cost-effective rail solutions for bulk consignments." },
   { icon: FileCheck, name: "Customs Brokerage", desc: "Hassle-free customs clearance for imports & exports." },
   { icon: Warehouse, name: "Warehouse & Distribution", desc: "Strategically located warehouses with full visibility." },
   { icon: Package, name: "Project Cargo", desc: "Oversized & heavy lift cargo handled end-to-end." },
@@ -42,9 +41,9 @@ const advantages = [
 ];
 
 const faqs = [
-  { q: "What freight services do you provide?", a: "We offer sea, air, road and rail freight along with customs brokerage, warehousing, project cargo and full export-import documentation." },
+  { q: "What domestic services do you provide?", a: "We offer sea, road and rail domestic services along with customs brokerage, warehousing, project cargo and full export-import documentation." },
   { q: "Do you handle international shipments?", a: "Yes. We serve 120+ countries through our trusted global network of carriers, agents and customs partners." },
-  { q: "How can I track my shipment?", a: "Use our online tracking page with your AWB or Bill of Lading number to get real-time status updates." },
+  { q: "How do I request a shipment?", a: "Reach out via our Contact page or call us directly — our team will get back to you with a tailored quote within 24 hours." },
   { q: "Do you offer customs clearance?", a: "Absolutely. Our licensed customs brokers handle the entire clearance process for imports and exports." },
 ];
 
@@ -179,7 +178,6 @@ function Index() {
           <p className="mt-4 text-white/85 max-w-2xl mx-auto">Let our team build a logistics solution tailored to your business. Talk to an expert today.</p>
           <div className="mt-8 flex flex-wrap justify-center gap-3">
             <Link to="/contact" className="rounded-full glass-btn-primary px-7 py-3.5 text-sm font-bold hover:-translate-y-0.5">Get a Free Quote</Link>
-            <Link to="/tracking" className="rounded-full glass-btn px-7 py-3.5 text-sm font-bold text-white hover:-translate-y-0.5">Track Shipment</Link>
           </div>
         </div>
       </section>

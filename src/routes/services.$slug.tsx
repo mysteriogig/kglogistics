@@ -1,28 +1,22 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
-import { Ship, Plane, Truck, Train, CheckCircle2, ArrowRight } from "lucide-react";
+import { Ship, Truck, Train, CheckCircle2, ArrowRight } from "lucide-react";
 import { PageHero } from "@/components/site/PageHero";
 
 const data: Record<string, { name: string; icon: any; intro: string; features: string[] }> = {
   "sea-freight": {
-    name: "Sea Freight Services",
+    name: "Sea Domestic Services",
     icon: Ship,
     intro: "Our ocean freight network connects you to every major port in the world. Whether you ship full containers (FCL), share space (LCL) or move break-bulk cargo, our experienced team ensures predictable transit times, competitive rates and clear communication at every step.",
     features: ["FCL & LCL shipments", "Break-bulk & RoRo cargo", "Worldwide port coverage", "Dedicated sailing schedules", "Cargo insurance options", "Real-time container tracking"],
   },
-  "air-freight": {
-    name: "Air Freight Services",
-    icon: Plane,
-    intro: "When time matters, our air freight services deliver. We partner with leading global carriers to offer reliable, priority handling for time-critical shipments — from small consignments to charter solutions.",
-    features: ["Express & standard air cargo", "Consolidated air freight", "Charter solutions", "Door-to-door delivery", "Dangerous goods handling", "24/7 shipment monitoring"],
-  },
   "road-freight": {
-    name: "Road Freight Services",
+    name: "Road Domestic Services",
     icon: Truck,
     intro: "Our pan-India trucking network provides reliable Full Truck Load (FTL) and Less than Truck Load (LTL) services with door-to-door delivery, GPS tracking and dedicated customer support.",
     features: ["FTL & LTL services", "Pan-India coverage", "GPS-tracked fleet", "Temperature controlled options", "Last-mile delivery", "Cross-border trucking"],
   },
   "rail-freight": {
-    name: "Rail Freight Services",
+    name: "Rail Domestic Services",
     icon: Train,
     intro: "A cost-effective and environmentally friendly option for bulk and long-haul cargo. We coordinate intermodal rail solutions integrated with our road and ocean networks.",
     features: ["Bulk & intermodal cargo", "Container rail movement", "Inland container depot access", "End-to-end coordination", "Competitive pricing", "Reduced carbon footprint"],
