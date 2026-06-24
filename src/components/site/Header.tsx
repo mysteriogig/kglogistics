@@ -1,14 +1,13 @@
 import { Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
-import { Menu, X, ChevronDown, Facebook, Linkedin, Twitter, Instagram, Phone, Mail, Ship, Plane, Truck, Train } from "lucide-react";
+import { Menu, X, ChevronDown, Facebook, Linkedin, Twitter, Instagram, Phone, Mail, Ship, Truck, Train } from "lucide-react";
 import { cn } from "@/lib/utils";
 import kgLogo from "@/assets/kg-logo-new.png.asset.json";
 
 const freightServices = [
-  { name: "Sea Freight Services", to: "/services/sea-freight", icon: Ship },
-  { name: "Air Freight Services", to: "/services/air-freight", icon: Plane },
-  { name: "Road Freight Services", to: "/services/road-freight", icon: Truck },
-  { name: "Rail Freight Services", to: "/services/rail-freight", icon: Train },
+  { name: "Sea Domestic Services", to: "/services/sea-freight", icon: Ship },
+  { name: "Road Domestic Services", to: "/services/road-freight", icon: Truck },
+  { name: "Rail Domestic Services", to: "/services/rail-freight", icon: Train },
 ];
 
 const otherServices = [
@@ -64,7 +63,7 @@ export function Header() {
           <nav className="hidden lg:flex items-center gap-1">
             <NavLink to="/">Home</NavLink>
             <NavLink to="/about">About</NavLink>
-            <Dropdown label="Freight Services">
+            <Dropdown label="Domestic Services">
               {freightServices.map((s) => (
                 <Link key={s.to} to={s.to} className="flex items-center gap-2 px-4 py-2.5 text-sm hover:bg-accent hover:text-[var(--primary-dark)]">
                   <s.icon className="h-4 w-4 text-[var(--primary)]" />{s.name}
@@ -83,8 +82,8 @@ export function Header() {
           </nav>
 
           <div className="flex items-center gap-2">
-            <Link to="/tracking" className="hidden md:inline-flex items-center rounded-full glass-btn-primary px-5 py-2 text-sm font-semibold hover:-translate-y-0.5">
-              Track Shipment
+            <Link to="/contact" className="hidden md:inline-flex items-center rounded-full glass-btn-primary px-5 py-2 text-sm font-semibold hover:-translate-y-0.5">
+              Get a Quote
             </Link>
             <button onClick={() => setOpen(!open)} className="lg:hidden grid h-10 w-10 place-items-center rounded-full glass-btn" aria-label="Menu">
               {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
@@ -100,7 +99,7 @@ export function Header() {
             <MobileLink to="/" onClick={() => setOpen(false)}>Home</MobileLink>
             <MobileLink to="/about" onClick={() => setOpen(false)}>About</MobileLink>
             <button onClick={() => setMobileFreight(!mobileFreight)} className="flex items-center justify-between py-3 text-sm font-medium border-b border-border">
-              Freight Services <ChevronDown className={cn("h-4 w-4 transition", mobileFreight && "rotate-180")} />
+              Domestic Services <ChevronDown className={cn("h-4 w-4 transition", mobileFreight && "rotate-180")} />
             </button>
             {mobileFreight && (
               <div className="pl-4 py-2 border-b border-border">
@@ -123,8 +122,8 @@ export function Header() {
             <MobileLink to="/gallery" onClick={() => setOpen(false)}>Gallery</MobileLink>
             <MobileLink to="/blogs" onClick={() => setOpen(false)}>Blogs</MobileLink>
             <MobileLink to="/contact" onClick={() => setOpen(false)}>Contact</MobileLink>
-            <Link to="/tracking" onClick={() => setOpen(false)} className="mt-3 inline-flex items-center justify-center rounded-full glass-btn-primary px-4 py-3 text-sm font-semibold">
-              Track Shipment
+            <Link to="/contact" onClick={() => setOpen(false)} className="mt-3 inline-flex items-center justify-center rounded-full glass-btn-primary px-4 py-3 text-sm font-semibold">
+              Get a Quote
             </Link>
           </nav>
         </div>
