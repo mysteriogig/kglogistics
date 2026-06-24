@@ -15,9 +15,9 @@ const images = [
   { q: "container+ship", p: "Container ship at sea, cinematic" },
   { q: "warehouse", p: "Modern logistics warehouse with workers" },
   { q: "cargo+plane", p: "Cargo plane being loaded at airport" },
-  { q: "truck+highway", p: "Freight truck on highway at dusk" },
+  { q: "truck+highway", p: "Domestic truck on highway at dusk" },
   { q: "port+crane", p: "Port crane lifting container" },
-  { q: "freight+train", p: "Freight train with containers" },
+  { q: "freight+train", p: "Domestic train with containers" },
   { q: "customs", p: "Customs clearance documentation" },
   { q: "project+cargo", p: "Heavy project cargo being loaded" },
 ];
