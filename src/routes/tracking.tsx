@@ -202,8 +202,8 @@ function TrackingPage() {
             <p className="mt-2 text-white/75">Talk to our team — we're here to help 24/7.</p>
           </div>
           <div className="flex flex-wrap gap-3">
-            <a href="tel:+916381380457" className="inline-flex items-center gap-2 rounded-md bg-[image:var(--gradient-primary)] px-6 py-3 text-sm font-semibold shadow-md"><Phone className="h-4 w-4" />+91 6381380457</a>
-            <a href="mailto:kglogistics.cbe@gmail.com" className="inline-flex items-center gap-2 rounded-md border border-white/30 px-6 py-3 text-sm font-semibold"><Mail className="h-4 w-4" />Email Us</a>
+            <a href="tel:+919342380457" className="inline-flex items-center gap-2 rounded-md bg-[image:var(--gradient-primary)] px-6 py-3 text-sm font-semibold shadow-md"><Phone className="h-4 w-4" />+91 9342380457</a>
+            <a href="mailto:kglogisticstn@gmail.com" className="inline-flex items-center gap-2 rounded-md border border-white/30 px-6 py-3 text-sm font-semibold"><Mail className="h-4 w-4" />Email Us</a>
           </div>
         </div>
       </section>

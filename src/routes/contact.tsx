@@ -29,8 +29,8 @@ function Contact() {
             <ul className="mt-8 space-y-5">
               {[
                 { icon: MapPin, label: "Office Address", value: "Door No.28-29, 2nd Floor, 100 feet road, DR Rajendra Prasad Road, Near Muthumariyamman Temple, Gandhipuram, Coimbatore - 641 012" },
-                { icon: Phone, label: "Phone", value: "+91 6381380457", href: "tel:+916381380457" },
-                { icon: Mail, label: "Email", value: "kglogistics.cbe@gmail.com", href: "mailto:kglogistics.cbe@gmail.com" },
+                { icon: Phone, label: "Phone", value: "+91 9342380457", href: "tel:+919342380457" },
+                { icon: Mail, label: "Email", value: "kglogisticstn@gmail.com", href: "mailto:kglogisticstn@gmail.com" },
                 { icon: Clock, label: "Working Hours", value: "Mon - Sat: 9:00 AM - 7:00 PM" },
               ].map((c) => (
                 <li key={c.label} className="flex gap-4">
