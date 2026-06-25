@@ -28,16 +28,16 @@ function Contact() {
             <p className="mt-4 text-muted-foreground leading-relaxed">Have a shipment to move or a question about our services? Our team is ready to help.</p>
             <ul className="mt-8 space-y-5">
               {[
-                { icon: MapPin, label: "Office Address", value: "Door No.28-29, 2nd Floor, 100 feet road, DR Rajendra Prasad Road, Near Muthumariyamman Temple, Gandhipuram, Coimbatore - 641 012" },
-                { icon: Phone, label: "Phone", value: "+91 6381380457", href: "tel:+916381380457" },
-                { icon: Mail, label: "Email", value: "kglogistics.cbe@gmail.com", href: "mailto:kglogistics.cbe@gmail.com" },
+                { icon: MapPin, label: "Office Address", value: "Door No.28-29, 2nd Floor, 100 feet road, DR Rajendra Prasad Road, Near Muthumariyamman Temple, Gandhipuram, Coimbatore - 641 012", href: "https://www.google.com/maps/search/?api=1&query=KG+Logistics+Door+No.28-29+100+feet+road+Gandhipuram+Coimbatore+641012", external: true },
+                { icon: Phone, label: "Phone", value: "+91 9342380457", href: "tel:+919342380457" },
+                { icon: Mail, label: "Email", value: "kglogisticstn@gmail.com", href: "mailto:kglogisticstn@gmail.com" },
                 { icon: Clock, label: "Working Hours", value: "Mon - Sat: 9:00 AM - 7:00 PM" },
               ].map((c) => (
                 <li key={c.label} className="flex gap-4">
                   <div className="grid h-11 w-11 shrink-0 place-items-center rounded-lg bg-[image:var(--gradient-primary)] text-white"><c.icon className="h-5 w-5" /></div>
                   <div className="min-w-0">
                     <div className="text-xs font-bold uppercase tracking-wide text-muted-foreground">{c.label}</div>
-                    {c.href ? <a href={c.href} className="font-medium text-[var(--dark)] break-words hover:text-[var(--primary)]">{c.value}</a> : <div className="font-medium text-[var(--dark)]">{c.value}</div>}
+                    {c.href ? <a href={c.href} target={c.external ? "_blank" : undefined} rel={c.external ? "noopener noreferrer" : undefined} className="font-medium text-[var(--dark)] break-words hover:text-[var(--primary)]">{c.value}</a> : <div className="font-medium text-[var(--dark)]">{c.value}</div>}
                   </div>
                 </li>
               ))}
