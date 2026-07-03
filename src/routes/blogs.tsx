@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Calendar, ArrowRight, User } from "lucide-react";
 import { PageHero } from "@/components/site/PageHero";
+import blogsHero from "@/assets/blogs-hero.png";
 
 export const Route = createFileRoute("/blogs")({
   head: () => ({
@@ -24,7 +25,7 @@ const posts = [
 function Blogs() {
   return (
     <>
-      <PageHero title="Blogs & Insights" crumbs={[{ label: "Home", to: "/" }, { label: "Blogs" }]} />
+      <PageHero title="Blogs & Insights" crumbs={[{ label: "Home", to: "/" }, { label: "Blogs" }]} image={blogsHero} />
       <section className="py-20">
         <div className="mx-auto max-w-7xl px-4 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {posts.map((p, i) => (
