@@ -92,6 +92,8 @@
   --gradient-hero: linear-gradient(135deg, rgba(0,42,86,0.92) 0%, rgba(0,73,144,0.82) 50%, rgba(20,90,160,0.7) 100%);
   --shadow-card: 0 4px 24px -8px rgba(0, 73, 144, 0.18);
   --shadow-elegant: 0 24px 70px -20px rgba(0, 73, 144, 0.35);
+  --accent-yellow: #FFC93C;
+  --accent-yellow-soft: #FFE9A8;
   --chart-1: oklch(0.646 0.222 41.116);
   --chart-2: oklch(0.6 0.118 184.704);
   --chart-3: oklch(0.398 0.07 227.392);

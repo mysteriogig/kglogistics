@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { Ship, Truck, Train, Warehouse, FileCheck, Package, Globe2, Shield, Box, ArrowRight } from "lucide-react";
+import { Ship, Truck, Train, Warehouse, FileCheck, Package, Globe2, Shield, Box, Plane, ArrowRight } from "lucide-react";
 import { PageHero } from "@/components/site/PageHero";
+import servicesHero from "@/assets/services-hero.png";
 
 export const Route = createFileRoute("/services")({
   head: () => ({
@@ -18,18 +19,21 @@ const services = [
   { icon: Ship, name: "Sea Domestic Services", desc: "FCL, LCL and break-bulk via leading ocean carriers and global port coverage.", to: "/services/sea-freight" },
   { icon: Truck, name: "Road Domestic Services", desc: "Pan-India trucking, FTL & LTL, and door-to-door delivery.", to: "/services/road-freight" },
   { icon: Train, name: "Rail Domestic Services", desc: "Cost-effective rail solutions for bulk and intermodal cargo.", to: "/services/rail-freight" },
-  { icon: FileCheck, name: "Customs Brokerage", desc: "Licensed brokers handling clearance for imports and exports.", to: "/services" },
-  { icon: Warehouse, name: "Warehouse & Distribution", desc: "Strategically located warehouses with end-to-end inventory visibility.", to: "/services" },
-  { icon: Globe2, name: "Export & Import Documentation", desc: "Complete paperwork, compliance and regulatory advisory.", to: "/services" },
-  { icon: Package, name: "Project Cargo", desc: "Specialized handling for oversized, heavy-lift and complex cargo.", to: "/services" },
-  { icon: Box, name: "Portable Container Decors", desc: "Custom-built portable container solutions for trade and events.", to: "/services" },
-  { icon: Shield, name: "Marine Insurance", desc: "Cargo insurance options to protect your shipment end-to-end.", to: "/services" },
+  { icon: Plane, name: "Air Domestic Services", desc: "Fast, time-critical air cargo with global airline partners.", to: "/services/air-freight" },
+  { icon: FileCheck, name: "Customs Brokerage", desc: "Licensed brokers handling clearance for imports and exports.", to: "/services/customs-brokerage" },
+  { icon: Warehouse, name: "Warehouse & Distribution", desc: "Strategically located warehouses with end-to-end inventory visibility.", to: "/services/warehouse-distribution" },
+  { icon: Truck, name: "Transportation", desc: "Reliable multimodal transportation across India and beyond.", to: "/services/transportation" },
+  { icon: Package, name: "Value Added Services", desc: "Packing, labeling, kitting and other services to complement your logistics.", to: "/services/value-added-services" },
+  { icon: Globe2, name: "Export & Import Documentation", desc: "Complete paperwork, compliance and regulatory advisory.", to: "/services/documentation" },
+  { icon: Package, name: "Project Cargo", desc: "Specialized handling for oversized, heavy-lift and complex cargo.", to: "/services/project-cargo" },
+  { icon: Box, name: "Portable Container Decors", desc: "Custom-built portable container solutions for trade and events.", to: "/services/container-decors" },
+  { icon: Shield, name: "Marine Insurance", desc: "Cargo insurance options to protect your shipment end-to-end.", to: "/services/marine-insurance" },
 ];
 
 function Services() {
   return (
     <>
-      <PageHero title="Our Services" crumbs={[{ label: "Home", to: "/" }, { label: "Services" }]} />
+      <PageHero title="Our Services" crumbs={[{ label: "Home", to: "/" }, { label: "Services" }]} image={servicesHero} />
       <section className="py-20">
         <div className="mx-auto max-w-7xl px-4">
           <div className="text-center max-w-2xl mx-auto">
