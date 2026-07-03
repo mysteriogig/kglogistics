@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ArrowRight, Package, Truck, Ship, Train } from "lucide-react";
+import { ArrowRight, Package, Truck, Ship, Train, Plane } from "lucide-react";
 import { Link } from "@tanstack/react-router";
 import { cn } from "@/lib/utils";
 
@@ -97,57 +97,76 @@ const fadeUp = {
 
 export function KGHero() {
   return (
-    <section className="relative min-h-[92vh] w-full flex items-center justify-center overflow-hidden">
-      {/* Deep tinted glass over the global animated background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-[#001a35]/85 via-[#003a73]/75 to-[#004990]/70 backdrop-blur-sm" />
-      <div className="absolute -top-1/3 left-1/2 -translate-x-1/2 h-[700px] w-[1000px] rounded-full bg-[#7fb3e0]/30 blur-[140px]" />
+    <>
+      {/* FIXED ANIMATED BACKDROP — stays live behind the page as user scrolls */}
+      <div aria-hidden className="fixed inset-0 -z-10 overflow-hidden pointer-events-none">
+        {/* Deep tinted glass */}
+        <div className="absolute inset-0 bg-gradient-to-br from-[#001a35]/95 via-[#003a73]/90 to-[#004990]/85" />
+        <div className="absolute -top-1/3 left-1/2 -translate-x-1/2 h-[700px] w-[1000px] rounded-full bg-[#7fb3e0]/30 blur-[140px]" />
+        {/* Subtle yellow warmth */}
+        <div className="absolute bottom-[-10%] right-[-10%] h-[500px] w-[500px] rounded-full bg-[var(--accent-yellow)]/10 blur-[140px]" />
 
-      {/* Decorative plane — top right */}
-      <motion.div
-        initial={{ opacity: 0, x: 80, y: -40 }}
-        animate={{ opacity: 1, x: 0, y: 0 }}
-        transition={{ duration: 1.6, delay: 0.2, ease: [0.23, 0.86, 0.39, 0.96] }}
-        className="absolute top-6 right-4 sm:top-10 sm:right-10 pointer-events-none"
-      >
+        {/* Decorative truck — top right corner */}
         <motion.div
-          animate={{ y: [0, -12, 0], rotate: [-6, -2, -6] }}
-          transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-          className="text-white/80"
+          initial={{ opacity: 0, x: 80, y: -40 }}
+          animate={{ opacity: 1, x: 0, y: 0 }}
+          transition={{ duration: 1.6, delay: 0.2 }}
+          className="absolute top-6 right-4 sm:top-10 sm:right-10"
         >
-          <Truck className="h-16 w-16 sm:h-28 sm:w-28 drop-shadow-[0_8px_24px_rgba(127,179,224,0.5)]" strokeWidth={1.2} />
+          <motion.div
+            animate={{ y: [0, -12, 0], rotate: [-6, -2, -6] }}
+            transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+            className="text-white/70"
+          >
+            <Truck className="h-16 w-16 sm:h-24 sm:w-24 drop-shadow-[0_8px_24px_rgba(127,179,224,0.5)]" strokeWidth={1.2} />
+          </motion.div>
         </motion.div>
-      </motion.div>
 
-      {/* Decorative ship — bottom left */}
-      <motion.div
-        initial={{ opacity: 0, x: -80, y: 40 }}
-        animate={{ opacity: 1, x: 0, y: 0 }}
-        transition={{ duration: 1.6, delay: 0.35, ease: [0.23, 0.86, 0.39, 0.96] }}
-        className="absolute bottom-10 left-4 sm:bottom-16 sm:left-10 pointer-events-none"
-      >
+        {/* Decorative ship — bottom left corner */}
         <motion.div
-          animate={{ y: [0, 8, 0], rotate: [0, 3, 0] }}
-          transition={{ duration: 9, repeat: Infinity, ease: "easeInOut" }}
-          className="text-white/80"
+          initial={{ opacity: 0, x: -80, y: 40 }}
+          animate={{ opacity: 1, x: 0, y: 0 }}
+          transition={{ duration: 1.6, delay: 0.35 }}
+          className="absolute bottom-10 left-4 sm:bottom-16 sm:left-10"
         >
-          <Ship className="h-16 w-16 sm:h-28 sm:w-28 drop-shadow-[0_8px_24px_rgba(127,179,224,0.5)]" strokeWidth={1.2} />
+          <motion.div
+            animate={{ y: [0, 8, 0], rotate: [0, 3, 0] }}
+            transition={{ duration: 9, repeat: Infinity, ease: "easeInOut" }}
+            className="text-white/70"
+          >
+            <Ship className="h-16 w-16 sm:h-24 sm:w-24 drop-shadow-[0_8px_24px_rgba(127,179,224,0.5)]" strokeWidth={1.2} />
+          </motion.div>
         </motion.div>
-      </motion.div>
 
-      {/* Floating shipping containers — visible on every breakpoint */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <FloatingContainer delay={0.3} width={210} height={95} rotate={10} bodyFrom="#003566" bodyTo="#001D3D" stamp="KG" stampLabel="EXPRESS" className="left-[-5%] top-[16%]" />
-        <FloatingContainer delay={0.5} width={190} height={85} rotate={-14} bodyFrom="#4F8FC9" bodyTo="#003566" stamp="SEA" stampLabel="FRAGILE" className="right-[-4%] top-[58%]" />
-        <FloatingContainer delay={0.4} width={150} height={70} rotate={-6} bodyFrom="#001D3D" bodyTo="#000814" stamp="ROAD" stampLabel="PRIORITY" className="left-[6%] bottom-[20%]" />
-        <FloatingContainer delay={0.6} width={130} height={62} rotate={18} bodyFrom="#003566" bodyTo="#001D3D" stamp="40HC" stampLabel="EXPORT" className="right-[16%] top-[10%]" />
-        <FloatingContainer delay={0.7} width={120} height={58} rotate={-20} bodyFrom="#4F8FC9" bodyTo="#001D3D" stamp="20FT" stampLabel="GLOBAL" className="left-[28%] top-[5%] hidden sm:block" />
+        {/* Flying plane — sweeps across the sky in a loop */}
+        <motion.div
+          initial={{ x: "-20vw", y: 0 }}
+          animate={{ x: "120vw", y: [0, -30, 10, 0] }}
+          transition={{
+            x: { duration: 22, repeat: Infinity, ease: "linear", delay: 1 },
+            y: { duration: 22, repeat: Infinity, ease: "easeInOut", delay: 1 },
+          }}
+          className="absolute top-[14%] left-0 text-[var(--accent-yellow)]/80"
+        >
+          <Plane className="h-10 w-10 sm:h-14 sm:w-14 rotate-[20deg] drop-shadow-[0_6px_18px_rgba(255,201,60,0.55)]" strokeWidth={1.3} />
+        </motion.div>
+
+        {/* Floating shipping containers */}
+        <div className="absolute inset-0 overflow-hidden">
+          <FloatingContainer delay={0.3} width={210} height={95} rotate={10} bodyFrom="#003566" bodyTo="#001D3D" stamp="KG" stampLabel="EXPRESS" className="left-[-5%] top-[16%]" />
+          <FloatingContainer delay={0.5} width={190} height={85} rotate={-14} bodyFrom="#4F8FC9" bodyTo="#003566" stamp="SEA" stampLabel="FRAGILE" className="right-[-4%] top-[58%]" />
+          <FloatingContainer delay={0.4} width={150} height={70} rotate={-6} bodyFrom="#001D3D" bodyTo="#000814" stamp="ROAD" stampLabel="PRIORITY" className="left-[6%] bottom-[18%]" />
+          <FloatingContainer delay={0.6} width={130} height={62} rotate={18} bodyFrom="#003566" bodyTo="#001D3D" stamp="40HC" stampLabel="EXPORT" className="right-[16%] top-[10%]" />
+          <FloatingContainer delay={0.7} width={120} height={58} rotate={-20} bodyFrom="#4F8FC9" bodyTo="#001D3D" stamp="AIR" stampLabel="GLOBAL" className="left-[28%] top-[5%] hidden sm:block" />
+        </div>
       </div>
 
-      {/* Content */}
-      <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 text-center">
+      {/* FROSTED GLASS HERO CARD */}
+      <section className="relative min-h-[92vh] w-full flex items-center justify-center overflow-hidden">
+        <div className="relative z-10 mx-auto max-w-5xl px-4 sm:px-6 text-center rounded-3xl p-8 sm:p-14 border border-white/15 bg-white/[0.06] backdrop-blur-2xl shadow-[0_20px_80px_-20px_rgba(0,8,20,0.6)]">
         <motion.div custom={0} variants={fadeUp} initial="hidden" animate="visible"
-          className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/[0.04] px-4 py-1.5 backdrop-blur mb-8">
-          <Package className="h-3.5 w-3.5 text-[#7fb3e0]" />
+          className="inline-flex items-center gap-2 rounded-full border border-[var(--accent-yellow)]/40 bg-[var(--accent-yellow)]/10 px-4 py-1.5 backdrop-blur mb-8">
+          <Package className="h-3.5 w-3.5 text-[var(--accent-yellow)]" />
           <span className="text-xs font-medium text-white/70 tracking-wide">End-to-End Cargo Solutions</span>
         </motion.div>
 
@@ -177,18 +196,16 @@ export function KGHero() {
           </Link>
         </motion.div>
 
-        <motion.div custom={4} variants={fadeUp} initial="hidden" animate="visible"
-          className="mt-14 flex items-center justify-center gap-8 sm:gap-12 text-white/40">
-          {[Ship, Truck, Train].map((Icon, i) => (
-            <div key={i} className="flex flex-col items-center gap-1.5">
-              <Icon className="h-5 w-5 sm:h-6 sm:w-6" />
-            </div>
-          ))}
-        </motion.div>
-      </div>
-
-      {/* Bottom fade to page */}
-      <div className="absolute bottom-0 inset-x-0 h-32 bg-gradient-to-t from-white/40 to-transparent pointer-events-none" />
-    </section>
+          <motion.div custom={4} variants={fadeUp} initial="hidden" animate="visible"
+            className="mt-14 flex items-center justify-center gap-8 sm:gap-12 text-white/50">
+            {[Ship, Truck, Train, Plane].map((Icon, i) => (
+              <div key={i} className="flex flex-col items-center gap-1.5">
+                <Icon className="h-5 w-5 sm:h-6 sm:w-6" />
+              </div>
+            ))}
+          </motion.div>
+        </div>
+      </section>
+    </>
   );
 }

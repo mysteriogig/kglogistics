@@ -13,10 +13,12 @@ import { Route as TrackingRouteImport } from './routes/tracking'
 import { Route as ServicesRouteImport } from './routes/services'
 import { Route as GalleryRouteImport } from './routes/gallery'
 import { Route as ContactRouteImport } from './routes/contact'
+import { Route as CareersRouteImport } from './routes/careers'
 import { Route as BlogsRouteImport } from './routes/blogs'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as ServicesSlugRouteImport } from './routes/services.$slug'
+import { Route as CareersLoginRouteImport } from './routes/careers.login'
 
 const TrackingRoute = TrackingRouteImport.update({
   id: '/tracking',
@@ -36,6 +38,11 @@ const GalleryRoute = GalleryRouteImport.update({
 const ContactRoute = ContactRouteImport.update({
   id: '/contact',
   path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CareersRoute = CareersRouteImport.update({
+  id: '/careers',
+  path: '/careers',
   getParentRoute: () => rootRouteImport,
 } as any)
 const BlogsRoute = BlogsRouteImport.update({
@@ -58,25 +65,34 @@ const ServicesSlugRoute = ServicesSlugRouteImport.update({
   path: '/$slug',
   getParentRoute: () => ServicesRoute,
 } as any)
+const CareersLoginRoute = CareersLoginRouteImport.update({
+  id: '/login',
+  path: '/login',
+  getParentRoute: () => CareersRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/blogs': typeof BlogsRoute
+  '/careers': typeof CareersRouteWithChildren
   '/contact': typeof ContactRoute
   '/gallery': typeof GalleryRoute
   '/services': typeof ServicesRouteWithChildren
   '/tracking': typeof TrackingRoute
+  '/careers/login': typeof CareersLoginRoute
   '/services/$slug': typeof ServicesSlugRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/blogs': typeof BlogsRoute
+  '/careers': typeof CareersRouteWithChildren
   '/contact': typeof ContactRoute
   '/gallery': typeof GalleryRoute
   '/services': typeof ServicesRouteWithChildren
   '/tracking': typeof TrackingRoute
+  '/careers/login': typeof CareersLoginRoute
   '/services/$slug': typeof ServicesSlugRoute
 }
 export interface FileRoutesById {
@@ -84,10 +100,12 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/blogs': typeof BlogsRoute
+  '/careers': typeof CareersRouteWithChildren
   '/contact': typeof ContactRoute
   '/gallery': typeof GalleryRoute
   '/services': typeof ServicesRouteWithChildren
   '/tracking': typeof TrackingRoute
+  '/careers/login': typeof CareersLoginRoute
   '/services/$slug': typeof ServicesSlugRoute
 }
 export interface FileRouteTypes {
@@ -96,30 +114,36 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/blogs'
+    | '/careers'
     | '/contact'
     | '/gallery'
     | '/services'
     | '/tracking'
+    | '/careers/login'
     | '/services/$slug'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
     | '/about'
     | '/blogs'
+    | '/careers'
     | '/contact'
     | '/gallery'
     | '/services'
     | '/tracking'
+    | '/careers/login'
     | '/services/$slug'
   id:
     | '__root__'
     | '/'
     | '/about'
     | '/blogs'
+    | '/careers'
     | '/contact'
     | '/gallery'
     | '/services'
     | '/tracking'
+    | '/careers/login'
     | '/services/$slug'
   fileRoutesById: FileRoutesById
 }
@@ -127,6 +151,7 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
   BlogsRoute: typeof BlogsRoute
+  CareersRoute: typeof CareersRouteWithChildren
   ContactRoute: typeof ContactRoute
   GalleryRoute: typeof GalleryRoute
   ServicesRoute: typeof ServicesRouteWithChildren
@@ -163,6 +188,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ContactRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/careers': {
+      id: '/careers'
+      path: '/careers'
+      fullPath: '/careers'
+      preLoaderRoute: typeof CareersRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/blogs': {
       id: '/blogs'
       path: '/blogs'
@@ -191,8 +223,26 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ServicesSlugRouteImport
       parentRoute: typeof ServicesRoute
     }
+    '/careers/login': {
+      id: '/careers/login'
+      path: '/login'
+      fullPath: '/careers/login'
+      preLoaderRoute: typeof CareersLoginRouteImport
+      parentRoute: typeof CareersRoute
+    }
   }
 }
+
+interface CareersRouteChildren {
+  CareersLoginRoute: typeof CareersLoginRoute
+}
+
+const CareersRouteChildren: CareersRouteChildren = {
+  CareersLoginRoute: CareersLoginRoute,
+}
+
+const CareersRouteWithChildren =
+  CareersRoute._addFileChildren(CareersRouteChildren)
 
 interface ServicesRouteChildren {
   ServicesSlugRoute: typeof ServicesSlugRoute
@@ -210,6 +260,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
   BlogsRoute: BlogsRoute,
+  CareersRoute: CareersRouteWithChildren,
   ContactRoute: ContactRoute,
   GalleryRoute: GalleryRoute,
   ServicesRoute: ServicesRouteWithChildren,

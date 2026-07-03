@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { CheckCircle2, Target, Eye, Heart, ArrowRight } from "lucide-react";
+import { CheckCircle2, Target, Eye, Heart, ArrowRight, User } from "lucide-react";
 import { PageHero } from "@/components/site/PageHero";
+import aboutHero from "@/assets/about-hero.png";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
@@ -17,7 +18,7 @@ export const Route = createFileRoute("/about")({
 function About() {
   return (
     <>
-      <PageHero title="About Us" crumbs={[{ label: "Home", to: "/" }, { label: "About" }]} />
+      <PageHero title="About Us" crumbs={[{ label: "Home", to: "/" }, { label: "About" }]} image={aboutHero} />
       <section className="py-20">
         <div className="mx-auto max-w-7xl px-4 grid lg:grid-cols-2 gap-12 items-center">
           <div>
@@ -36,18 +37,8 @@ function About() {
             </ul>
             <Link to="/contact" className="mt-8 inline-flex items-center gap-2 rounded-md bg-[image:var(--gradient-primary)] px-6 py-3 text-sm font-semibold text-white shadow-md">Contact Us <ArrowRight className="h-4 w-4" /></Link>
           </div>
-          <div className="grid grid-cols-2 gap-4">
-            {[
-              { v: "15+", l: "Years Experience" },
-              { v: "2,500+", l: "Happy Clients" },
-              { v: "120+", l: "Countries" },
-              { v: "50K+", l: "Shipments" },
-            ].map((s) => (
-              <div key={s.l} className="p-8 rounded-xl bg-[image:var(--gradient-primary)] text-white text-center shadow-[var(--shadow-elegant)]">
-                <div className="text-4xl font-bold">{s.v}</div>
-                <div className="mt-1 text-sm text-white/80 uppercase tracking-wide">{s.l}</div>
-              </div>
-            ))}
+          <div className="rounded-2xl overflow-hidden shadow-[var(--shadow-elegant)] border border-white/40">
+            <img src={aboutHero} alt="KG Logistics team" className="w-full h-full object-cover" loading="lazy" width={1920} height={768} />
           </div>
         </div>
       </section>
@@ -65,6 +56,33 @@ function About() {
               <p className="mt-3 text-sm text-muted-foreground leading-relaxed">{c.desc}</p>
             </div>
           ))}
+        </div>
+      </section>
+
+      {/* FOUNDERS */}
+      <section className="py-20">
+        <div className="mx-auto max-w-7xl px-4">
+          <div className="text-center max-w-2xl mx-auto">
+            <span className="text-xs font-bold uppercase tracking-[0.2em] text-[var(--primary)]">Leadership</span>
+            <h2 className="mt-3 text-3xl sm:text-4xl font-bold text-[var(--dark)]">Meet Our Founders</h2>
+            <p className="mt-3 text-muted-foreground">The visionaries behind KG Logistics — driving every shipment with care, integrity, and expertise.</p>
+          </div>
+          <div className="mt-12 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {[
+              { name: "KG Indireswaran", role: "Founder & Managing Director", bio: "Two decades of experience in international logistics and cross-border trade, shaping KG Logistics' vision from day one." },
+              { name: "Sakthi Sundaram V", role: "Co-Founder & Director of Operations", bio: "Leads day-to-day operations, carrier relationships and network expansion across sea, road, rail and air." },
+              { name: "Abhishek", role: "Co-Founder & Director of Strategy", bio: "Drives technology, growth strategy and customer experience — ensuring every client receives world-class service." },
+            ].map((f) => (
+              <div key={f.name} className="p-8 rounded-2xl glass border border-border text-center shadow-[var(--shadow-card)] hover:-translate-y-1 transition">
+                <div className="mx-auto grid h-20 w-20 place-items-center rounded-full bg-[image:var(--gradient-primary)] text-white ring-4 ring-[var(--accent-yellow)]/40">
+                  <User className="h-9 w-9" />
+                </div>
+                <h3 className="mt-5 text-lg font-bold text-[var(--dark)]">{f.name}</h3>
+                <div className="mt-1 text-xs font-semibold uppercase tracking-wider text-[var(--primary)]">{f.role}</div>
+                <p className="mt-4 text-sm text-muted-foreground leading-relaxed">{f.bio}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
     </>

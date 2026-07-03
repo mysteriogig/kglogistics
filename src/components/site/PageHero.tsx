@@ -8,9 +8,13 @@ export function PageHero({ title, crumbs, image = trackingHero }: { title: strin
       <div className="absolute inset-0">
         <img src={image} alt="" className="h-full w-full object-cover" width={1920} height={500} />
         <div className="absolute inset-0 bg-[image:var(--gradient-hero)]" />
+        {/* Subtle yellow accent glow */}
+        <div className="absolute -bottom-16 -right-16 h-72 w-72 rounded-full bg-[var(--accent-yellow)]/25 blur-3xl" />
       </div>
       <div className="relative mx-auto max-w-7xl px-4 py-16 sm:py-24 lg:py-28 text-white">
-        <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold tracking-tight">{title}</h1>
+        <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold tracking-tight">
+          <span className="inline-block border-b-4 border-[var(--accent-yellow)] pb-1">{title}</span>
+        </h1>
         <nav className="mt-4 flex flex-wrap items-center gap-1 text-sm text-white/85">
           {crumbs.map((c, i) => (
             <span key={i} className="flex items-center gap-1">

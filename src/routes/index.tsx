@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Link } from "@tanstack/react-router";
-import { Ship, Truck, Train, Warehouse, FileCheck, Package, Shield, Clock, Award, HeartHandshake, ArrowRight, CheckCircle2, Globe2, Quote, ChevronDown } from "lucide-react";
+import { Ship, Truck, Train, Warehouse, FileCheck, Package, Shield, Clock, Award, HeartHandshake, ArrowRight, CheckCircle2, Globe2, Plane, ChevronDown } from "lucide-react";
 import { useState } from "react";
 import { KGHero } from "@/components/site/KGHero";
 
@@ -20,17 +20,11 @@ const services = [
   { icon: Ship, name: "Sea Domestic", desc: "FCL, LCL and break-bulk shipping with worldwide port coverage." },
   { icon: Truck, name: "Road Domestic", desc: "Pan-India trucking and last-mile delivery network." },
   { icon: Train, name: "Rail Domestic", desc: "Cost-effective rail solutions for bulk consignments." },
+  { icon: Plane, name: "Air Domestic", desc: "Fast, secure air cargo for time-critical shipments." },
   { icon: FileCheck, name: "Customs Brokerage", desc: "Hassle-free customs clearance for imports & exports." },
   { icon: Warehouse, name: "Warehouse & Distribution", desc: "Strategically located warehouses with full visibility." },
   { icon: Package, name: "Project Cargo", desc: "Oversized & heavy lift cargo handled end-to-end." },
   { icon: Globe2, name: "Export Documentation", desc: "Complete paperwork, compliance and advisory." },
-];
-
-const stats = [
-  { value: "15+", label: "Years Experience" },
-  { value: "2,500+", label: "Happy Clients" },
-  { value: "120+", label: "Countries Served" },
-  { value: "50K+", label: "Shipments Delivered" },
 ];
 
 const advantages = [
@@ -47,29 +41,13 @@ const faqs = [
   { q: "Do you offer customs clearance?", a: "Absolutely. Our licensed customs brokers handle the entire clearance process for imports and exports." },
 ];
 
-const testimonials = [
-  { name: "Rajesh Kumar", role: "Director, Texmach Exports", text: "KG Logistics has been our logistics backbone for 5 years. Reliable, transparent and always on time." },
-  { name: "Priya Menon", role: "Supply Chain Head, Aarvi Ltd", text: "Their customs team is exceptional. They cleared a complex shipment in record time and saved us significant cost." },
-  { name: "Mohammed Ali", role: "Owner, Coimbatore Textiles", text: "Friendly team, professional service and competitive pricing. Highly recommended for export shipments." },
-];
-
 function Index() {
   return (
     <>
       <KGHero />
 
-      {/* STATS */}
-      <section className="glass-dark text-white border-y border-white/10">
-        <div className="mx-auto max-w-7xl px-4 py-12 grid grid-cols-2 md:grid-cols-4 gap-6">
-          {stats.map((s) => (
-            <div key={s.label} className="text-center">
-              <div className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[var(--primary-glow)]">{s.value}</div>
-              <div className="mt-1 text-xs sm:text-sm text-white/70 uppercase tracking-wide">{s.label}</div>
-            </div>
-          ))}
-        </div>
-      </section>
-
+      {/* Frosted panel — the animated hero remains visible & running through the glass as user scrolls */}
+      <div className="relative bg-white/75 backdrop-blur-2xl">
       {/* SERVICES */}
       <section className="py-20">
         <div className="mx-auto max-w-7xl px-4">
@@ -141,25 +119,6 @@ function Index() {
         </div>
       </section>
 
-      {/* TESTIMONIALS */}
-      <section className="py-20">
-        <div className="mx-auto max-w-7xl px-4">
-          <SectionHead eyebrow="Testimonials" title="Trusted By Businesses Worldwide" desc="" />
-          <div className="mt-12 grid md:grid-cols-3 gap-6">
-            {testimonials.map((t) => (
-              <div key={t.name} className="p-7 rounded-2xl glass">
-                <Quote className="h-8 w-8 text-[var(--primary)]/30" />
-                <p className="mt-4 text-sm leading-relaxed text-[var(--dark)]">"{t.text}"</p>
-                <div className="mt-5 pt-5 border-t border-border">
-                  <div className="font-bold text-sm">{t.name}</div>
-                  <div className="text-xs text-muted-foreground">{t.role}</div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* FAQ */}
       <section className="py-20">
         <div className="mx-auto max-w-3xl px-4">
@@ -181,6 +140,7 @@ function Index() {
           </div>
         </div>
       </section>
+      </div>
     </>
   );
 }

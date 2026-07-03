@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { Phone, Mail, MapPin, Clock, Send } from "lucide-react";
 import { PageHero } from "@/components/site/PageHero";
+import contactHero from "@/assets/contact-hero.png";
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
@@ -19,7 +20,7 @@ function Contact() {
   const [sent, setSent] = useState(false);
   return (
     <>
-      <PageHero title="Contact Us" crumbs={[{ label: "Home", to: "/" }, { label: "Contact" }]} />
+      <PageHero title="Contact Us" crumbs={[{ label: "Home", to: "/" }, { label: "Contact" }]} image={contactHero} />
       <section className="py-20">
         <div className="mx-auto max-w-7xl px-4 grid lg:grid-cols-[1fr_1.2fr] gap-10">
           <div>

@@ -1,6 +1,6 @@
-import { Link } from "@tanstack/react-router";
-import { useEffect, useState } from "react";
-import { Menu, X, ChevronDown, Facebook, Linkedin, Twitter, Instagram, Phone, Mail, Ship, Truck, Train } from "lucide-react";
+import { Link, useNavigate } from "@tanstack/react-router";
+import { useEffect, useRef, useState } from "react";
+import { Menu, X, ChevronDown, Facebook, Linkedin, Twitter, Instagram, Phone, Mail, Ship, Truck, Train, Plane } from "lucide-react";
 import { cn } from "@/lib/utils";
 import kgLogo from "@/assets/kg-logo-new.png.asset.json";
 
@@ -8,17 +8,18 @@ const freightServices = [
   { name: "Sea Domestic Services", to: "/services/sea-freight", icon: Ship },
   { name: "Road Domestic Services", to: "/services/road-freight", icon: Truck },
   { name: "Rail Domestic Services", to: "/services/rail-freight", icon: Train },
+  { name: "Air Domestic Services", to: "/services/air-freight", icon: Plane },
 ];
 
-const otherServices = [
-  "Customs Brokerage",
-  "Warehouse & Distribution",
-  "Transportation",
-  "Value Added Services",
-  "Export & Import Documentation",
-  "Portable Container Decors",
-  "Project Cargo",
-  "Marine Insurance",
+const otherServices: { name: string; to: string }[] = [
+  { name: "Customs Brokerage", to: "/services/customs-brokerage" },
+  { name: "Warehouse & Distribution", to: "/services/warehouse-distribution" },
+  { name: "Transportation", to: "/services/transportation" },
+  { name: "Value Added Services", to: "/services/value-added-services" },
+  { name: "Export & Import Documentation", to: "/services/documentation" },
+  { name: "Portable Container Decors", to: "/services/container-decors" },
+  { name: "Project Cargo", to: "/services/project-cargo" },
+  { name: "Marine Insurance", to: "/services/marine-insurance" },
 ];
 
 export function Header() {
@@ -26,6 +27,8 @@ export function Header() {
   const [open, setOpen] = useState(false);
   const [mobileFreight, setMobileFreight] = useState(false);
   const [mobileOther, setMobileOther] = useState(false);
+  const navigate = useNavigate();
+  const careerClicks = useRef<number[]>([]);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 10);
@@ -33,6 +36,28 @@ export function Header() {
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+
+  // Lock body scroll when mobile menu is open
+  useEffect(() => {
+    if (typeof document === "undefined") return;
+    document.body.style.overflow = open ? "hidden" : "";
+    return () => { document.body.style.overflow = ""; };
+  }, [open]);
+
+  const handleCareersClick = (e: React.MouseEvent, closeMobile?: () => void) => {
+    const now = Date.now();
+    // Keep only clicks within last 4 seconds
+    careerClicks.current = careerClicks.current.filter((t) => now - t < 4000);
+    careerClicks.current.push(now);
+    if (careerClicks.current.length >= 5) {
+      e.preventDefault();
+      careerClicks.current = [];
+      closeMobile?.();
+      navigate({ to: "/careers/login" });
+    } else {
+      closeMobile?.();
+    }
+  };
 
   return (
     <header className={cn("sticky top-0 z-50 w-full transition-all", scrolled ? "glass shadow-sm" : "bg-white/40 backdrop-blur-xl border-b border-white/40")}>
@@ -72,12 +97,13 @@ export function Header() {
             </Dropdown>
             <Dropdown label="Other Services">
               {otherServices.map((s) => (
-                <Link key={s} to="/services" className="block px-4 py-2.5 text-sm hover:bg-accent hover:text-[var(--primary-dark)]">{s}</Link>
+                <Link key={s.to} to={s.to} className="block px-4 py-2.5 text-sm hover:bg-accent hover:text-[var(--primary-dark)]">{s.name}</Link>
               ))}
             </Dropdown>
             <NavLink to="/tracking">Documents</NavLink>
             <NavLink to="/gallery">Gallery</NavLink>
             <NavLink to="/blogs">Blogs</NavLink>
+            <Link to="/careers" onClick={(e) => handleCareersClick(e)} className="px-3 py-2 text-sm font-medium text-[var(--dark)] hover:text-[var(--primary)] transition">Careers</Link>
             <NavLink to="/contact">Contact</NavLink>
           </nav>
 
@@ -94,7 +120,7 @@ export function Header() {
 
       {/* Mobile menu */}
       {open && (
-        <div className="lg:hidden glass border-t border-white/30">
+        <div className="lg:hidden glass border-t border-white/30 max-h-[calc(100vh-4rem)] overflow-y-auto overscroll-contain">
           <nav className="mx-auto max-w-7xl px-4 py-3 flex flex-col">
             <MobileLink to="/" onClick={() => setOpen(false)}>Home</MobileLink>
             <MobileLink to="/about" onClick={() => setOpen(false)}>About</MobileLink>
@@ -114,13 +140,14 @@ export function Header() {
             {mobileOther && (
               <div className="pl-4 py-2 border-b border-border">
                 {otherServices.map((s) => (
-                  <Link key={s} to="/services" onClick={() => setOpen(false)} className="block py-2 text-sm text-muted-foreground hover:text-[var(--primary)]">{s}</Link>
+                  <Link key={s.to} to={s.to} onClick={() => setOpen(false)} className="block py-2 text-sm text-muted-foreground hover:text-[var(--primary)]">{s.name}</Link>
                 ))}
               </div>
             )}
             <MobileLink to="/tracking" onClick={() => setOpen(false)}>Documents</MobileLink>
             <MobileLink to="/gallery" onClick={() => setOpen(false)}>Gallery</MobileLink>
             <MobileLink to="/blogs" onClick={() => setOpen(false)}>Blogs</MobileLink>
+            <Link to="/careers" onClick={(e) => handleCareersClick(e, () => setOpen(false))} className="py-3 text-sm font-medium border-b border-border text-[var(--dark)]">Careers</Link>
             <MobileLink to="/contact" onClick={() => setOpen(false)}>Contact</MobileLink>
             <Link to="/contact" onClick={() => setOpen(false)} className="mt-3 inline-flex items-center justify-center rounded-full glass-btn-primary px-4 py-3 text-sm font-semibold">
               Get a Quote
