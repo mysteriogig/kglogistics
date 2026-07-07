@@ -2,7 +2,7 @@ import { Link, useNavigate } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
 import { Menu, X, ChevronDown, Facebook, Linkedin, Twitter, Instagram, Phone, Mail, Ship, Truck, Train, Plane } from "lucide-react";
 import { cn } from "@/lib/utils";
-import kgLogo from "@/assets/kg-logo-new.png.asset.json";
+import kgLogo from "@/assets/kg-logo.png";
 
 const freightServices = [
   { name: "Sea Domestic Services", to: "/services/sea-freight", icon: Ship },
@@ -82,7 +82,7 @@ export function Header() {
       <div className="mx-auto max-w-7xl px-4">
         <div className="flex h-16 lg:h-20 items-center justify-between gap-4">
           <Link to="/" className="flex items-center min-w-0 shrink">
-            <img src={kgLogo.url} alt="KG Logistics" className="h-9 sm:h-11 lg:h-12 w-auto object-contain" />
+            <img src={kgLogo} alt="KG Logistics" className="h-9 sm:h-11 lg:h-12 w-auto object-contain" />
           </Link>
 
           <nav className="hidden lg:flex items-center gap-1">
