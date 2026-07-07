@@ -1,6 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { Phone, Mail, MapPin, Facebook, Linkedin, Twitter, Instagram } from "lucide-react";
-import logoAsset from "@/assets/kg-logo-new.png.asset.json";
+import logoAsset from "@/assets/kg-logo.png";
 
 export function Footer() {
   return (
@@ -8,7 +8,7 @@ export function Footer() {
       <div className="mx-auto max-w-7xl px-4 py-14 grid gap-10 md:grid-cols-2 lg:grid-cols-4">
         <div>
           <Link to="/">
-            <img src={logoAsset.url} alt="KG Logistics" className="h-12 w-auto" />
+            <img src={logoAsset} alt="KG Logistics" className="h-12 w-auto" />
           </Link>
           <p className="mt-4 text-sm leading-relaxed">
           One of the most trusted logistics partners in India, delivering end-to-end domestic forwarding, customs, and supply chain solutions worldwide.
