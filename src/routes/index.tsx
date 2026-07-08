@@ -22,14 +22,14 @@ export const Route = createFileRoute("/")({
 });
 
 const services = [
-  { icon: Ship, name: "Sea Domestic", desc: "FCL, LCL and break-bulk shipping with worldwide port coverage." },
-  { icon: Truck, name: "Road Domestic", desc: "Pan-India trucking and last-mile delivery network." },
-  { icon: Train, name: "Rail Domestic", desc: "Cost-effective rail solutions for bulk consignments." },
-  { icon: Plane, name: "Air Domestic", desc: "Fast, secure air cargo for time-critical shipments." },
-  { icon: FileCheck, name: "Customs Brokerage", desc: "Hassle-free customs clearance for imports & exports." },
-  { icon: Warehouse, name: "Warehouse & Distribution", desc: "Strategically located warehouses with full visibility." },
-  { icon: Package, name: "Project Cargo", desc: "Oversized & heavy lift cargo handled end-to-end." },
-  { icon: Globe2, name: "Export Documentation", desc: "Complete paperwork, compliance and advisory." },
+  { icon: Ship, name: "Sea Domestic", desc: "FCL, LCL and break-bulk shipping with worldwide port coverage.", to: "/services/sea-freight" },
+  { icon: Truck, name: "Road Domestic", desc: "Pan-India trucking and last-mile delivery network.", to: "/services/road-freight" },
+  { icon: Train, name: "Rail Domestic", desc: "Cost-effective rail solutions for bulk consignments.", to: "/services/rail-freight" },
+  { icon: Plane, name: "Air Domestic", desc: "Fast, secure air cargo for time-critical shipments.", to: "/services/air-freight" },
+  { icon: FileCheck, name: "Customs Brokerage", desc: "Hassle-free customs clearance for imports & exports.", to: "/services/customs-brokerage" },
+  { icon: Warehouse, name: "Warehouse & Distribution", desc: "Strategically located warehouses with full visibility.", to: "/services/warehouse-distribution" },
+  { icon: Package, name: "Project Cargo", desc: "Oversized & heavy lift cargo handled end-to-end.", to: "/services/project-cargo" },
+  { icon: Globe2, name: "Export Documentation", desc: "Complete paperwork, compliance and advisory.", to: "/services/documentation" },
 ];
 
 const advantages = [
@@ -94,7 +94,7 @@ function Index() {
                 <h3 className="mt-5 font-semibold text-white tracking-tight">{s.name}</h3>
                 <p className="mt-2 text-sm text-white/55 leading-relaxed">{s.desc}</p>
                 <Link
-                  to="/services"
+                  to={s.to}
                   className="mt-4 inline-flex items-center gap-1 text-sm font-medium text-[var(--accent-yellow)] group-hover:gap-2 transition-all"
                 >
                   Learn more <ArrowRight className="h-3.5 w-3.5" />
