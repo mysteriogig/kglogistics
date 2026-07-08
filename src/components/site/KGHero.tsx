@@ -163,7 +163,7 @@ export function KGHero() {
 
       {/* FROSTED GLASS HERO CARD */}
       <section className="relative min-h-[92vh] w-full flex items-center justify-center overflow-hidden">
-        <div className="relative z-10 mx-auto max-w-5xl px-4 sm:px-6 text-center rounded-3xl p-8 sm:p-14 border border-white/15 bg-white/[0.06] backdrop-blur-2xl shadow-[0_20px_80px_-20px_rgba(0,8,20,0.6)]">
+  <div className="relative z-10 mx-auto max-w-5xl px-4 sm:px-6 text-center">
         <motion.div custom={0} variants={fadeUp} initial="hidden" animate="visible"
           className="inline-flex items-center gap-2 rounded-full border border-[var(--accent-yellow)]/40 bg-[var(--accent-yellow)]/10 px-4 py-1.5 backdrop-blur mb-8">
           <Package className="h-3.5 w-3.5 text-[var(--accent-yellow)]" />
