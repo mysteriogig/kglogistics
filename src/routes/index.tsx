@@ -5,7 +5,8 @@ import {
   Ship, Truck, Train, Warehouse, FileCheck, Package, Shield, Clock, Award,
   HeartHandshake, ArrowRight, CheckCircle2, Globe2, Plane, ChevronDown,
 } from "lucide-react";
-import { useState } from "react";
+import { useState, type ReactNode } from "react";
+import type { Variants } from "framer-motion";
 import { KGHero } from "@/components/site/KGHero";
 
 export const Route = createFileRoute("/")({
@@ -53,9 +54,9 @@ const faqs = [
 ];
 
 // Shared reveal animation — mirrors the hero's easing so motion feels continuous, not bolted on.
-const reveal = {
+const reveal: Variants = {
   hidden: { opacity: 0, y: 24 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.25, 0.4, 0.25, 1] } },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.25, 0.4, 0.25, 1] as const } },
 };
 
 // One glass surface used everywhere — matches the hero card exactly so the whole page reads as one material.
@@ -232,7 +233,7 @@ function Index() {
 }
 
 /** Consistent section padding + max-width wrapper — keeps rhythm uniform without per-section guesswork. */
-function Section({ children, className = "" }) {
+function Section({ children, className = "" }: { children: ReactNode; className?: string }) {
   return (
     <section className="py-20 sm:py-24">
       <div className={`mx-auto max-w-7xl px-4 ${className}`}>{children}</div>
@@ -250,7 +251,7 @@ function Divider() {
   );
 }
 
-function SectionHead({ eyebrow, title, desc, align = "center" }) {
+function SectionHead({ eyebrow, title, desc, align = "center" }: { eyebrow: string; title: string; desc?: string; align?: "center" | "left" }) {
   return (
     <div className={align === "center" ? "text-center max-w-2xl mx-auto" : "max-w-2xl"}>
       <span className="text-xs font-semibold uppercase tracking-[0.22em] text-[var(--accent-yellow)]">
@@ -262,7 +263,7 @@ function SectionHead({ eyebrow, title, desc, align = "center" }) {
   );
 }
 
-function FaqItem({ q, a, delay = 0 }) {
+function FaqItem({ q, a, delay = 0 }: { q: string; a: string; delay?: number }) {
   const [open, setOpen] = useState(false);
   return (
     <motion.div
