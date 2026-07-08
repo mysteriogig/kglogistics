@@ -7,6 +7,14 @@ import serviceRail from "@/assets/service-rail.png";
 import serviceAir from "@/assets/service-air.png";
 import servicesHero from "@/assets/services-hero.png";
 import galleryHero from "@/assets/gallery-hero.png";
+import serviceCustoms from "@/assets/service-customs.jpg";
+import serviceWarehouse from "@/assets/service-warehouse.jpg";
+import serviceTransportation from "@/assets/service-transportation.jpg";
+import serviceVas from "@/assets/service-vas.jpg";
+import serviceDocs from "@/assets/service-docs.jpg";
+import serviceProject from "@/assets/service-project.jpg";
+import serviceContainerDecor from "@/assets/service-container-decor.jpg";
+import serviceInsurance from "@/assets/service-insurance.jpg";
 
 const data: Record<string, { name: string; icon: any; image: string; intro: string; features: string[] }> = {
   "sea-freight": {
@@ -40,56 +48,56 @@ const data: Record<string, { name: string; icon: any; image: string; intro: stri
   "customs-brokerage": {
     name: "Customs Brokerage",
     icon: FileCheck,
-    image: servicesHero,
+    image: serviceCustoms,
     intro: "Our licensed customs brokers manage the full clearance process for imports and exports — from HS-code classification and duty optimization to final release. We stay ahead of every regulatory change so your cargo doesn't sit at the port.",
     features: ["Import & export clearance", "HS-code classification", "Duty & tax optimization", "License and permit management", "Bond and warehousing entries", "Post-clearance advisory"],
   },
   "warehouse-distribution": {
     name: "Warehouse & Distribution",
     icon: Warehouse,
-    image: galleryHero,
+    image: serviceWarehouse,
     intro: "Modern, strategically located warehouses across India ready to receive, store and distribute your inventory. Full WMS visibility, secure facilities and value-added services keep your supply chain moving.",
     features: ["Bonded & open warehousing", "Pick, pack & dispatch", "Inventory management (WMS)", "Cross-docking", "24/7 CCTV & security", "Nationwide distribution"],
   },
   "transportation": {
     name: "Transportation",
     icon: Truck,
-    image: serviceRoad,
+    image: serviceTransportation,
     intro: "Reliable multimodal transportation across India and beyond — from container haulage to specialized reefer and flatbed movement. Our vetted network of partners guarantees safety, punctuality and clear communication.",
     features: ["Container haulage & trailer movement", "Reefer & temperature controlled", "Flatbed and low-bed trailers", "First-mile & last-mile delivery", "Real-time GPS tracking", "Dedicated fleet options"],
   },
   "value-added-services": {
     name: "Value Added Services",
     icon: Package,
-    image: servicesHero,
+    image: serviceVas,
     intro: "Beyond moving cargo, we add value at every touch point — from export packing and labeling to kitting, palletization and quality inspection. One partner for all your logistics needs.",
     features: ["Export packing & crating", "Labeling & barcoding", "Kitting & bundling", "Palletization & shrink-wrapping", "Quality inspection", "Reverse logistics"],
   },
   "documentation": {
     name: "Export & Import Documentation",
     icon: Globe2,
-    image: servicesHero,
+    image: serviceDocs,
     intro: "A single documentation error can hold your cargo for days. Our specialists prepare, verify and file every document required for smooth import and export flow — accurate the first time.",
     features: ["Commercial invoice & packing list", "Bill of Lading / AWB", "Certificate of Origin", "IEC and shipping bill", "DGFT compliance", "Letter of Credit management"],
   },
   "project-cargo": {
     name: "Project Cargo",
     icon: Package,
-    image: serviceSea,
+    image: serviceProject,
     intro: "Oversized, heavy-lift and out-of-gauge cargo needs specialized planning. From feasibility studies and route surveys to lifting plans and multi-modal execution — we handle end-to-end project logistics.",
     features: ["Route & feasibility surveys", "Heavy-lift and OOG handling", "Break-bulk & RoRo shipments", "Permit & escort management", "Onsite supervision", "Turnkey project execution"],
   },
   "container-decors": {
     name: "Portable Container Decors",
     icon: Box,
-    image: serviceSea,
+    image: serviceContainerDecor,
     intro: "Custom-built portable container solutions — perfect for on-site offices, retail pop-ups, exhibitions, cafés and event activations. Fully customizable, mobile and durable.",
     features: ["Office & site containers", "Retail & café conversions", "Exhibition & event units", "Custom branding & interiors", "Insulation & HVAC options", "Delivery and setup"],
   },
   "marine-insurance": {
     name: "Marine Insurance",
     icon: Shield,
-    image: serviceSea,
+    image: serviceInsurance,
     intro: "Protect your cargo against loss, damage or delay with tailored marine insurance policies. We help you choose the right coverage — whether single-shipment or annual open-cover.",
     features: ["Institute Cargo Clauses A, B, C", "Single-shipment or open policies", "War & strikes coverage", "Claims handling assistance", "Competitive premiums", "Transparent advisory"],
   },
