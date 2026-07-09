@@ -5,21 +5,21 @@ import { cn } from "@/lib/utils";
 import kgLogo from "@/assets/kg-logo.png";
 
 const freightServices = [
-  { name: "Sea Domestic Services", to: "/services/sea-freight", icon: Ship },
-  { name: "Road Domestic Services", to: "/services/road-freight", icon: Truck },
-  { name: "Rail Domestic Services", to: "/services/rail-freight", icon: Train },
-  { name: "Air Domestic Services", to: "/services/air-freight", icon: Plane },
+  { name: "Sea Domestic Services", slug: "sea-freight", icon: Ship },
+  { name: "Road Domestic Services", slug: "road-freight", icon: Truck },
+  { name: "Rail Domestic Services", slug: "rail-freight", icon: Train },
+  { name: "Air Domestic Services", slug: "air-freight", icon: Plane },
 ];
 
-const otherServices: { name: string; to: string }[] = [
-  { name: "Customs Brokerage", to: "/services/customs-brokerage" },
-  { name: "Warehouse & Distribution", to: "/services/warehouse-distribution" },
-  { name: "Transportation", to: "/services/transportation" },
-  { name: "Value Added Services", to: "/services/value-added-services" },
-  { name: "Export & Import Documentation", to: "/services/documentation" },
-  { name: "Portable Container Decors", to: "/services/container-decors" },
-  { name: "Project Cargo", to: "/services/project-cargo" },
-  { name: "Marine Insurance", to: "/services/marine-insurance" },
+const otherServices: { name: string; slug: string }[] = [
+  { name: "Customs Brokerage", slug: "customs-brokerage" },
+  { name: "Warehouse & Distribution", slug: "warehouse-distribution" },
+  { name: "Transportation", slug: "transportation" },
+  { name: "Value Added Services", slug: "value-added-services" },
+  { name: "Export & Import Documentation", slug: "documentation" },
+  { name: "Portable Container Decors", slug: "container-decors" },
+  { name: "Project Cargo", slug: "project-cargo" },
+  { name: "Marine Insurance", slug: "marine-insurance" },
 ];
 
 export function Header() {
@@ -90,14 +90,14 @@ export function Header() {
             <NavLink to="/about">About</NavLink>
             <Dropdown label="Domestic Services">
               {freightServices.map((s) => (
-                <Link key={s.to} to={s.to} className="flex items-center gap-2 px-4 py-2.5 text-sm hover:bg-accent hover:text-[var(--primary-dark)]">
+                <Link key={s.slug} to="/services/$slug" params={{ slug: s.slug }} className="flex items-center gap-2 px-4 py-2.5 text-sm hover:bg-accent hover:text-[var(--primary-dark)]">
                   <s.icon className="h-4 w-4 text-[var(--primary)]" />{s.name}
                 </Link>
               ))}
             </Dropdown>
             <Dropdown label="Other Services">
               {otherServices.map((s) => (
-                <Link key={s.to} to={s.to} className="block px-4 py-2.5 text-sm hover:bg-accent hover:text-[var(--primary-dark)]">{s.name}</Link>
+                <Link key={s.slug} to="/services/$slug" params={{ slug: s.slug }} className="block px-4 py-2.5 text-sm hover:bg-accent hover:text-[var(--primary-dark)]">{s.name}</Link>
               ))}
             </Dropdown>
             <NavLink to="/tracking">Documents</NavLink>
@@ -130,7 +130,7 @@ export function Header() {
             {mobileFreight && (
               <div className="pl-4 py-2 border-b border-border">
                 {freightServices.map((s) => (
-                  <Link key={s.to} to={s.to} onClick={() => setOpen(false)} className="block py-2 text-sm text-muted-foreground hover:text-[var(--primary)]">{s.name}</Link>
+                  <Link key={s.slug} to="/services/$slug" params={{ slug: s.slug }} onClick={() => setOpen(false)} className="block py-2 text-sm text-muted-foreground hover:text-[var(--primary)]">{s.name}</Link>
                 ))}
               </div>
             )}
@@ -140,7 +140,7 @@ export function Header() {
             {mobileOther && (
               <div className="pl-4 py-2 border-b border-border">
                 {otherServices.map((s) => (
-                  <Link key={s.to} to={s.to} onClick={() => setOpen(false)} className="block py-2 text-sm text-muted-foreground hover:text-[var(--primary)]">{s.name}</Link>
+                  <Link key={s.slug} to="/services/$slug" params={{ slug: s.slug }} onClick={() => setOpen(false)} className="block py-2 text-sm text-muted-foreground hover:text-[var(--primary)]">{s.name}</Link>
                 ))}
               </div>
             )}
