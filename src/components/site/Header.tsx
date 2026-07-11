@@ -60,7 +60,7 @@ export function Header() {
   };
 
   return (
-    <header className={cn("sticky top-0 z-50 w-full transition-all", scrolled ? "glass shadow-sm" : "bg-white/40 backdrop-blur-xl border-b border-white/40")}>
+    <header className={cn("sticky top-0 z-50 w-full transition-all", scrolled ? "bg-white/40 backdrop-blur-xl border-b border-white/40" : "bg-white shadow-sm border-b border-border/10")}>
       {/* Top bar */}
       <div className="hidden md:block border-b border-white/10 bg-[#001a35]/80 backdrop-blur text-white text-xs">
         <div className="mx-auto max-w-7xl px-4 py-2 flex items-center justify-between">

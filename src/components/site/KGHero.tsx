@@ -138,18 +138,6 @@ export function KGHero() {
           </motion.div>
         </motion.div>
 
-        {/* Flying plane — sweeps across the sky in a loop */}
-        <motion.div
-          initial={{ x: "-20vw", y: 0 }}
-          animate={{ x: "120vw", y: [0, -30, 10, 0] }}
-          transition={{
-            x: { duration: 22, repeat: Infinity, ease: "linear", delay: 1 },
-            y: { duration: 22, repeat: Infinity, ease: "easeInOut", delay: 1 },
-          }}
-          className="absolute top-[14%] left-0 text-[var(--accent-yellow)]/80"
-        >
-          <Plane className="h-10 w-10 sm:h-14 sm:w-14 rotate-[20deg] drop-shadow-[0_6px_18px_rgba(255,201,60,0.55)]" strokeWidth={1.3} />
-        </motion.div>
 
         {/* Floating shipping containers */}
         <div className="absolute inset-0 overflow-hidden">
